@@ -3,21 +3,13 @@
     "core": "ProgLang24",
     "name": "title:Python",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "Python"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "Python",
-      "R"
+      "Python"
     ],
     "expected_langs": [
       "Python"
@@ -29,14 +21,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 1,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Python"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Python"
@@ -48,14 +35,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 1,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Python"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Python"
@@ -65,21 +47,13 @@
     "core": "ProgLang24",
     "name": "title:Go",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "Go"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "Go",
-      "R"
+      "Go"
     ],
     "expected_langs": [
       "Go"
@@ -91,14 +65,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 1,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Go"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Go"
@@ -107,333 +76,204 @@
   {
     "core": "ProgLang24",
     "name": "document:functional",
-    "tp": 12,
-    "fp": 12,
-    "fn": 1,
-    "s1_pre": 0.5,
-    "s1_rec": 0.9230769230769231,
-    "s1_f1": 0.6486486486486487,
-    "tp_langs": [
-      "Apache Groovy",
+    "tp": 13,
+    "fp": 11,
+    "fn": 0,
+    "s1_pre": 0.5416666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.7027027027027027,
+    "found_langs": [
+      "Dart",
       "Elixir",
+      "Go",
       "Haskell",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Python",
-      "R",
-      "Ruby",
-      "Rust",
+      "C",
+      "MATLAB",
       "Scala",
+      "C++",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "PowerShell",
+      "R",
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Ruby",
+      "Zig",
+      "Lua",
+      "Rust",
       "Swift"
     ],
-    "fp_langs": [
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Java",
-      "MATLAB",
-      "PHP",
-      "PowerShell",
-      "Typescript",
-      "Zig"
-    ],
-    "fn_langs": [
-      "TypeScript"
-    ],
-    "found_langs": [
-      "Apache Groovy",
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Elixir",
-      "Go",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "MATLAB",
-      "PHP",
-      "PowerShell",
-      "Python",
-      "R",
-      "Ruby",
-      "Rust",
-      "Scala",
-      "Swift",
-      "Typescript",
-      "Zig"
-    ],
     "expected_langs": [
-      "Apache Groovy",
-      "Elixir",
-      "Haskell",
-      "JavaScript",
-      "Kotlin",
       "Lua",
-      "Python",
       "R",
-      "Ruby",
+      "Elixir",
+      "Python",
       "Rust",
-      "Scala",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala"
     ]
   },
   {
     "core": "ProgLang24",
     "name": "document:declarative",
     "tp": 10,
-    "fp": 12,
+    "fp": 11,
     "fn": 3,
-    "s1_pre": 0.45454545454545453,
+    "s1_pre": 0.47619047619047616,
     "s1_rec": 0.7692307692307693,
-    "s1_f1": 0.5714285714285714,
-    "tp_langs": [
-      "Apache Groovy",
+    "s1_f1": 0.588235294117647,
+    "found_langs": [
+      "Dart",
+      "Go",
       "Haskell",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "R",
-      "Ruby",
-      "Rust",
+      "C",
+      "MATLAB",
       "Scala",
+      "C++",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "PowerShell",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Ruby",
+      "Zig",
+      "Lua",
+      "Rust",
       "Swift"
     ],
-    "fp_langs": [
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Java",
-      "MATLAB",
-      "PHP",
-      "PowerShell",
-      "Typescript",
-      "Zig"
-    ],
-    "fn_langs": [
-      "Elixir",
-      "Python",
-      "TypeScript"
-    ],
-    "found_langs": [
-      "Apache Groovy",
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "MATLAB",
-      "PHP",
-      "PowerShell",
-      "R",
-      "Ruby",
-      "Rust",
-      "Scala",
-      "Swift",
-      "Typescript",
-      "Zig"
-    ],
     "expected_langs": [
-      "Apache Groovy",
-      "Elixir",
-      "Haskell",
-      "JavaScript",
-      "Kotlin",
       "Lua",
-      "Python",
       "R",
-      "Ruby",
+      "Elixir",
+      "Python",
       "Rust",
-      "Scala",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala"
     ]
   },
   {
     "core": "ProgLang24",
     "name": "document:object-oriented",
-    "tp": 13,
-    "fp": 6,
-    "fn": 4,
-    "s1_pre": 0.6842105263157895,
-    "s1_rec": 0.7647058823529411,
-    "s1_f1": 0.7222222222222222,
-    "tp_langs": [
-      "Apache Groovy",
-      "C Sharp",
+    "tp": 14,
+    "fp": 5,
+    "fn": 3,
+    "s1_pre": 0.7368421052631579,
+    "s1_rec": 0.8235294117647058,
+    "s1_f1": 0.7777777777777778,
+    "found_langs": [
       "Dart",
       "Go",
+      "C",
+      "MATLAB",
+      "Scala",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "R",
+      "Python",
       "Java",
       "JavaScript",
+      "TypeScript",
+      "C Sharp",
       "Kotlin",
-      "Lua",
-      "Python",
       "Ruby",
+      "Lua",
       "Rust",
-      "Scala",
       "Swift"
     ],
-    "fp_langs": [
-      "Assembly language",
-      "C",
-      "MATLAB",
-      "PHP",
-      "R",
-      "Typescript"
-    ],
-    "fn_langs": [
-      "C++",
-      "Mathlab",
-      "PowerShell",
-      "TypeScript"
-    ],
-    "found_langs": [
-      "Apache Groovy",
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "Dart",
-      "Go",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "MATLAB",
-      "PHP",
-      "Python",
-      "R",
-      "Ruby",
-      "Rust",
-      "Scala",
-      "Swift",
-      "Typescript"
-    ],
     "expected_langs": [
-      "Apache Groovy",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Mathlab",
       "PowerShell",
+      "Dart",
+      "Lua",
       "Python",
-      "Ruby",
+      "Java",
       "Rust",
-      "Scala",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala",
+      "C++"
     ]
   },
   {
     "core": "ProgLang24",
     "name": "document:imperative",
     "tp": 6,
-    "fp": 3,
+    "fp": 2,
     "fn": 11,
-    "s1_pre": 0.6666666666666666,
+    "s1_pre": 0.75,
     "s1_rec": 0.35294117647058826,
-    "s1_f1": 0.46153846153846156,
-    "tp_langs": [
-      "C Sharp",
-      "Go",
-      "PowerShell",
-      "Python",
-      "Ruby",
-      "Scala"
-    ],
-    "fp_langs": [
-      "C",
-      "Elixir",
-      "R"
-    ],
-    "fn_langs": [
-      "Apache Groovy",
-      "C++",
-      "Dart",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Mathlab",
-      "Rust",
-      "Swift",
-      "TypeScript"
-    ],
+    "s1_f1": 0.48,
     "found_langs": [
+      "PowerShell",
+      "Elixir",
+      "Python",
+      "Go",
       "C",
       "C Sharp",
-      "Elixir",
-      "Go",
-      "PowerShell",
-      "Python",
-      "R",
       "Ruby",
       "Scala"
     ],
     "expected_langs": [
-      "Apache Groovy",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Mathlab",
       "PowerShell",
+      "Dart",
+      "Lua",
       "Python",
-      "Ruby",
+      "Java",
       "Rust",
-      "Scala",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala",
+      "C++"
     ]
   },
   {
     "core": "ProgLang24",
     "name": "title:C#",
     "tp": 1,
-    "fp": 3,
+    "fp": 2,
     "fn": 0,
-    "s1_pre": 0.25,
+    "s1_pre": 0.3333333333333333,
     "s1_rec": 1.0,
-    "s1_f1": 0.4,
-    "tp_langs": [
-      "C Sharp"
-    ],
-    "fp_langs": [
-      "C",
-      "C++",
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 0.5,
     "found_langs": [
-      "C",
-      "C Sharp",
       "C++",
-      "R"
+      "C",
+      "C Sharp"
     ],
     "expected_langs": [
       "C Sharp"
@@ -443,23 +283,13 @@
     "core": "ProgLang24",
     "name": "title:C Sharp",
     "tp": 1,
-    "fp": 2,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.3333333333333333,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.5,
-    "tp_langs": [
-      "C Sharp"
-    ],
-    "fp_langs": [
-      "C",
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "C",
-      "C Sharp",
-      "R"
+      "C Sharp"
     ],
     "expected_langs": [
       "C Sharp"
@@ -469,29 +299,19 @@
     "core": "ProgLang24",
     "name": "title:C++",
     "tp": 2,
-    "fp": 2,
+    "fp": 1,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 0.6666666666666666,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "C",
-      "C++"
-    ],
-    "fp_langs": [
-      "C Sharp",
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 0.8,
     "found_langs": [
-      "C",
-      "C Sharp",
       "C++",
-      "R"
+      "C",
+      "C Sharp"
     ],
     "expected_langs": [
-      "C",
-      "C++"
+      "C++",
+      "C"
     ]
   },
   {
@@ -500,50 +320,28 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "C",
-      "C++"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
-      "C",
-      "C++"
+      "C++",
+      "C"
     ]
   },
   {
     "core": "ProgLang24",
     "name": "document:\"JavaScript framework\"",
-    "tp": 1,
-    "fp": 5,
-    "fn": 1,
-    "s1_pre": 0.16666666666666666,
-    "s1_rec": 0.5,
-    "s1_f1": 0.25,
-    "tp_langs": [
-      "JavaScript"
-    ],
-    "fp_langs": [
-      "C",
-      "Dart",
-      "Java",
-      "R",
-      "Typescript"
-    ],
-    "fn_langs": [
-      "TypeScript"
-    ],
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "s1_pre": 0.6666666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.8,
     "found_langs": [
-      "C",
       "Dart",
-      "Java",
       "JavaScript",
-      "R",
-      "Typescript"
+      "TypeScript"
     ],
     "expected_langs": [
       "JavaScript",
@@ -556,15 +354,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -577,30 +369,18 @@
     "tp": 0,
     "fp": 0,
     "fn": 8,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Dart",
-      "Elixir",
-      "Go",
-      "Kotlin",
-      "Rust",
-      "Swift",
-      "TypeScript",
-      "Zig"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Dart",
       "Elixir",
-      "Go",
-      "Kotlin",
       "Rust",
-      "Swift",
+      "Go",
       "TypeScript",
+      "Kotlin",
+      "Swift",
       "Zig"
     ]
   },
@@ -608,38 +388,22 @@
     "core": "ProgLang24",
     "name": "document:\"modern programming languages\"",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 7,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 0.125,
-    "s1_f1": 0.2,
-    "tp_langs": [
-      "Swift"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [
-      "Dart",
-      "Elixir",
-      "Go",
-      "Kotlin",
-      "Rust",
-      "TypeScript",
-      "Zig"
-    ],
+    "s1_f1": 0.2222222222222222,
     "found_langs": [
-      "R",
       "Swift"
     ],
     "expected_langs": [
       "Dart",
       "Elixir",
-      "Go",
-      "Kotlin",
       "Rust",
-      "Swift",
+      "Go",
       "TypeScript",
+      "Kotlin",
+      "Swift",
       "Zig"
     ]
   },
@@ -649,30 +413,18 @@
     "tp": 0,
     "fp": 0,
     "fn": 8,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Dart",
-      "Elixir",
-      "Go",
-      "Kotlin",
-      "Rust",
-      "Swift",
-      "TypeScript",
-      "Zig"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Dart",
       "Elixir",
-      "Go",
-      "Kotlin",
       "Rust",
-      "Swift",
+      "Go",
       "TypeScript",
+      "Kotlin",
+      "Swift",
       "Zig"
     ]
   },
@@ -682,15 +434,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -703,15 +449,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -724,15 +464,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -745,15 +479,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -766,23 +494,15 @@
     "tp": 0,
     "fp": 0,
     "fn": 4,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Go",
-      "Rust",
-      "Swift",
-      "Zig"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Go",
-      "Rust",
       "Swift",
-      "Zig"
+      "Zig",
+      "Rust"
     ]
   },
   {
@@ -791,21 +511,14 @@
     "tp": 0,
     "fp": 0,
     "fn": 3,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Rust",
-      "Swift",
-      "Zig"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
-      "Rust",
       "Swift",
-      "Zig"
+      "Zig",
+      "Rust"
     ]
   },
   {
@@ -814,14 +527,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 1,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Rust"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Rust"
@@ -831,21 +539,13 @@
     "core": "ProgLang24_2",
     "name": "title:Python",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "Python"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "Python",
-      "R"
+      "Python"
     ],
     "expected_langs": [
       "Python"
@@ -855,21 +555,13 @@
     "core": "ProgLang24_2",
     "name": "title:Python3",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "Python"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "Python",
-      "R"
+      "Python"
     ],
     "expected_langs": [
       "Python"
@@ -881,14 +573,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 1,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Python"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Python"
@@ -898,21 +585,13 @@
     "core": "ProgLang24_2",
     "name": "title:Go",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "Go"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "Go",
-      "R"
+      "Go"
     ],
     "expected_langs": [
       "Go"
@@ -922,21 +601,13 @@
     "core": "ProgLang24_2",
     "name": "title:Golang",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.6666666666666666,
-    "tp_langs": [
-      "Go"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "Go",
-      "R"
+      "Go"
     ],
     "expected_langs": [
       "Go"
@@ -951,63 +622,39 @@
     "s1_pre": 0.7058823529411765,
     "s1_rec": 0.9230769230769231,
     "s1_f1": 0.8000000000000002,
-    "tp_langs": [
-      "Apache Groovy",
-      "Elixir",
-      "Haskell",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Python",
-      "R",
-      "Ruby",
-      "Rust",
-      "Scala",
-      "Swift"
-    ],
-    "fp_langs": [
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "Go",
-      "Java"
-    ],
-    "fn_langs": [
-      "TypeScript"
-    ],
     "found_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "Java",
+      "Go",
+      "JavaScript",
       "Apache Groovy",
       "Assembly language",
-      "C",
-      "C Sharp",
-      "Elixir",
-      "Go",
       "Haskell",
-      "Java",
-      "JavaScript",
+      "C Sharp",
       "Kotlin",
-      "Lua",
-      "Python",
-      "R",
+      "C",
+      "Swift",
       "Ruby",
-      "Rust",
-      "Scala",
-      "Swift"
+      "Scala"
     ],
     "expected_langs": [
-      "Apache Groovy",
-      "Elixir",
-      "Haskell",
-      "JavaScript",
-      "Kotlin",
       "Lua",
-      "Python",
       "R",
-      "Ruby",
+      "Elixir",
+      "Python",
       "Rust",
-      "Scala",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala"
     ]
   },
   {
@@ -1019,230 +666,140 @@
     "s1_pre": 0.7058823529411765,
     "s1_rec": 0.9230769230769231,
     "s1_f1": 0.8000000000000002,
-    "tp_langs": [
-      "Apache Groovy",
-      "Elixir",
-      "Haskell",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Python",
-      "R",
-      "Ruby",
-      "Rust",
-      "Scala",
-      "Swift"
-    ],
-    "fp_langs": [
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "Go",
-      "Java"
-    ],
-    "fn_langs": [
-      "TypeScript"
-    ],
     "found_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "Java",
+      "Go",
+      "JavaScript",
       "Apache Groovy",
       "Assembly language",
-      "C",
-      "C Sharp",
-      "Elixir",
-      "Go",
       "Haskell",
-      "Java",
-      "JavaScript",
+      "C Sharp",
       "Kotlin",
-      "Lua",
-      "Python",
-      "R",
+      "C",
+      "Swift",
       "Ruby",
-      "Rust",
-      "Scala",
-      "Swift"
+      "Scala"
     ],
     "expected_langs": [
-      "Apache Groovy",
-      "Elixir",
-      "Haskell",
-      "JavaScript",
-      "Kotlin",
       "Lua",
-      "Python",
       "R",
-      "Ruby",
+      "Elixir",
+      "Python",
       "Rust",
-      "Scala",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala"
     ]
   },
   {
     "core": "ProgLang24_2",
     "name": "document:object-oriented",
-    "tp": 13,
-    "fp": 6,
-    "fn": 4,
-    "s1_pre": 0.6842105263157895,
-    "s1_rec": 0.7647058823529411,
-    "s1_f1": 0.7222222222222222,
-    "tp_langs": [
-      "Apache Groovy",
-      "C Sharp",
+    "tp": 14,
+    "fp": 5,
+    "fn": 3,
+    "s1_pre": 0.7368421052631579,
+    "s1_rec": 0.8235294117647058,
+    "s1_f1": 0.7777777777777778,
+    "found_langs": [
       "Dart",
       "Go",
+      "C",
+      "MATLAB",
+      "Scala",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "R",
+      "Python",
       "Java",
       "JavaScript",
+      "TypeScript",
+      "C Sharp",
       "Kotlin",
-      "Lua",
-      "Python",
       "Ruby",
+      "Lua",
       "Rust",
-      "Scala",
       "Swift"
     ],
-    "fp_langs": [
-      "Assembly language",
-      "C",
-      "MATLAB",
-      "PHP",
-      "R",
-      "Typescript"
-    ],
-    "fn_langs": [
-      "C++",
-      "Mathlab",
-      "PowerShell",
-      "TypeScript"
-    ],
-    "found_langs": [
-      "Apache Groovy",
-      "Assembly language",
-      "C",
-      "C Sharp",
-      "Dart",
-      "Go",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "MATLAB",
-      "PHP",
-      "Python",
-      "R",
-      "Ruby",
-      "Rust",
-      "Scala",
-      "Swift",
-      "Typescript"
-    ],
     "expected_langs": [
-      "Apache Groovy",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Mathlab",
       "PowerShell",
+      "Dart",
+      "Lua",
       "Python",
-      "Ruby",
+      "Java",
       "Rust",
-      "Scala",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala",
+      "C++"
     ]
   },
   {
     "core": "ProgLang24_2",
     "name": "document:imperative",
     "tp": 5,
-    "fp": 3,
+    "fp": 2,
     "fn": 12,
-    "s1_pre": 0.625,
+    "s1_pre": 0.7142857142857143,
     "s1_rec": 0.29411764705882354,
-    "s1_f1": 0.4,
-    "tp_langs": [
-      "C Sharp",
-      "Go",
-      "PowerShell",
-      "Python",
-      "Scala"
-    ],
-    "fp_langs": [
-      "C",
-      "Elixir",
-      "R"
-    ],
-    "fn_langs": [
-      "Apache Groovy",
-      "C++",
-      "Dart",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Mathlab",
-      "Ruby",
-      "Rust",
-      "Swift",
-      "TypeScript"
-    ],
+    "s1_f1": 0.4166666666666667,
     "found_langs": [
-      "C",
-      "C Sharp",
-      "Elixir",
-      "Go",
       "PowerShell",
+      "Elixir",
       "Python",
-      "R",
+      "Go",
+      "C Sharp",
+      "C",
       "Scala"
     ],
     "expected_langs": [
-      "Apache Groovy",
-      "C Sharp",
-      "C++",
-      "Dart",
-      "Go",
-      "Java",
-      "JavaScript",
-      "Kotlin",
-      "Lua",
-      "Mathlab",
       "PowerShell",
+      "Dart",
+      "Lua",
       "Python",
-      "Ruby",
+      "Java",
       "Rust",
-      "Scala",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
       "Swift",
-      "TypeScript"
+      "Ruby",
+      "Scala",
+      "C++"
     ]
   },
   {
     "core": "ProgLang24_2",
     "name": "title:C#",
     "tp": 1,
-    "fp": 2,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.3333333333333333,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.5,
-    "tp_langs": [
-      "C Sharp"
-    ],
-    "fp_langs": [
-      "C",
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "C",
-      "C Sharp",
-      "R"
+      "C Sharp"
     ],
     "expected_langs": [
       "C Sharp"
@@ -1252,23 +809,13 @@
     "core": "ProgLang24_2",
     "name": "title:C Sharp",
     "tp": 1,
-    "fp": 2,
+    "fp": 0,
     "fn": 0,
-    "s1_pre": 0.3333333333333333,
+    "s1_pre": 1.0,
     "s1_rec": 1.0,
-    "s1_f1": 0.5,
-    "tp_langs": [
-      "C Sharp"
-    ],
-    "fp_langs": [
-      "C",
-      "R"
-    ],
-    "fn_langs": [],
+    "s1_f1": 1.0,
     "found_langs": [
-      "C",
-      "C Sharp",
-      "R"
+      "C Sharp"
     ],
     "expected_langs": [
       "C Sharp"
@@ -1277,80 +824,50 @@
   {
     "core": "ProgLang24_2",
     "name": "title:C++",
-    "tp": 2,
+    "tp": 1,
     "fp": 0,
-    "fn": 0,
+    "fn": 1,
     "s1_pre": 1.0,
-    "s1_rec": 1.0,
-    "s1_f1": 1.0,
-    "tp_langs": [
-      "C",
-      "C++"
-    ],
-    "fp_langs": [],
-    "fn_langs": [],
+    "s1_rec": 0.5,
+    "s1_f1": 0.6666666666666666,
     "found_langs": [
-      "C",
       "C++"
     ],
     "expected_langs": [
-      "C",
-      "C++"
+      "C++",
+      "C"
     ]
   },
   {
     "core": "ProgLang24_2",
     "name": "title:C plus plus",
-    "tp": 2,
+    "tp": 1,
     "fp": 0,
-    "fn": 0,
+    "fn": 1,
     "s1_pre": 1.0,
-    "s1_rec": 1.0,
-    "s1_f1": 1.0,
-    "tp_langs": [
-      "C",
-      "C++"
-    ],
-    "fp_langs": [],
-    "fn_langs": [],
+    "s1_rec": 0.5,
+    "s1_f1": 0.6666666666666666,
     "found_langs": [
-      "C",
       "C++"
     ],
     "expected_langs": [
-      "C",
-      "C++"
+      "C++",
+      "C"
     ]
   },
   {
     "core": "ProgLang24_2",
     "name": "document:\"JavaScript framework\"",
-    "tp": 1,
-    "fp": 5,
-    "fn": 1,
-    "s1_pre": 0.16666666666666666,
-    "s1_rec": 0.5,
-    "s1_f1": 0.25,
-    "tp_langs": [
-      "JavaScript"
-    ],
-    "fp_langs": [
-      "C",
-      "Dart",
-      "Java",
-      "R",
-      "Typescript"
-    ],
-    "fn_langs": [
-      "TypeScript"
-    ],
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "s1_pre": 0.6666666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.8,
     "found_langs": [
-      "C",
       "Dart",
-      "Java",
       "JavaScript",
-      "R",
-      "Typescript"
+      "TypeScript"
     ],
     "expected_langs": [
       "JavaScript",
@@ -1363,15 +880,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -1382,38 +893,22 @@
     "core": "ProgLang24_2",
     "name": "document:\"most modern programming languages\"",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 7,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 0.125,
-    "s1_f1": 0.2,
-    "tp_langs": [
-      "Swift"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [
-      "Dart",
-      "Elixir",
-      "Go",
-      "Kotlin",
-      "Rust",
-      "TypeScript",
-      "Zig"
-    ],
+    "s1_f1": 0.2222222222222222,
     "found_langs": [
-      "R",
       "Swift"
     ],
     "expected_langs": [
       "Dart",
       "Elixir",
-      "Go",
-      "Kotlin",
       "Rust",
-      "Swift",
+      "Go",
       "TypeScript",
+      "Kotlin",
+      "Swift",
       "Zig"
     ]
   },
@@ -1421,38 +916,22 @@
     "core": "ProgLang24_2",
     "name": "document:\"modern programming languages\"",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 7,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 0.125,
-    "s1_f1": 0.2,
-    "tp_langs": [
-      "Swift"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [
-      "Dart",
-      "Elixir",
-      "Go",
-      "Kotlin",
-      "Rust",
-      "TypeScript",
-      "Zig"
-    ],
+    "s1_f1": 0.2222222222222222,
     "found_langs": [
-      "R",
       "Swift"
     ],
     "expected_langs": [
       "Dart",
       "Elixir",
-      "Go",
-      "Kotlin",
       "Rust",
-      "Swift",
+      "Go",
       "TypeScript",
+      "Kotlin",
+      "Swift",
       "Zig"
     ]
   },
@@ -1460,38 +939,22 @@
     "core": "ProgLang24_2",
     "name": "document:\"trendy programming languages\"",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 7,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 0.125,
-    "s1_f1": 0.2,
-    "tp_langs": [
-      "Swift"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [
-      "Dart",
-      "Elixir",
-      "Go",
-      "Kotlin",
-      "Rust",
-      "TypeScript",
-      "Zig"
-    ],
+    "s1_f1": 0.2222222222222222,
     "found_langs": [
-      "R",
       "Swift"
     ],
     "expected_langs": [
       "Dart",
       "Elixir",
-      "Go",
-      "Kotlin",
       "Rust",
-      "Swift",
+      "Go",
       "TypeScript",
+      "Kotlin",
+      "Swift",
       "Zig"
     ]
   },
@@ -1501,15 +964,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -1522,15 +979,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -1543,15 +994,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -1564,15 +1009,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 2,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "JavaScript",
-      "TypeScript"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "JavaScript",
@@ -1585,52 +1024,33 @@
     "tp": 0,
     "fp": 0,
     "fn": 4,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Go",
-      "Rust",
-      "Swift",
-      "Zig"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Go",
-      "Rust",
       "Swift",
-      "Zig"
+      "Zig",
+      "Rust"
     ]
   },
   {
     "core": "ProgLang24_2",
     "name": "document:\"What is a memory-safe programming language\"",
     "tp": 1,
-    "fp": 1,
+    "fp": 0,
     "fn": 2,
-    "s1_pre": 0.5,
+    "s1_pre": 1.0,
     "s1_rec": 0.3333333333333333,
-    "s1_f1": 0.4,
-    "tp_langs": [
-      "Rust"
-    ],
-    "fp_langs": [
-      "R"
-    ],
-    "fn_langs": [
-      "Swift",
-      "Zig"
-    ],
+    "s1_f1": 0.5,
     "found_langs": [
-      "R",
       "Rust"
     ],
     "expected_langs": [
-      "Rust",
       "Swift",
-      "Zig"
+      "Zig",
+      "Rust"
     ]
   },
   {
@@ -1639,14 +1059,9 @@
     "tp": 0,
     "fp": 0,
     "fn": 1,
-    "s1_pre": 0.0,
+    "s1_pre": 0,
     "s1_rec": 0.0,
-    "s1_f1": 0.0,
-    "tp_langs": [],
-    "fp_langs": [],
-    "fn_langs": [
-      "Rust"
-    ],
+    "s1_f1": 0,
     "found_langs": [],
     "expected_langs": [
       "Rust"
