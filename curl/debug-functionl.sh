@@ -1,0 +1,1 @@
+http://localhost:8983/solr/ProgLang24_3/analysis/field?fieldName=document&fieldType=text_en_prog&analysis.showmatch=true&fieldValue=functional

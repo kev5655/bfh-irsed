@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Programming Language Search Engine</h1>
+    </header>
+    <main>
+        <section class="search-section">
+            <h2>Search</h2>
+            <form action="results.html" method="get">
+                <input type="text" name="query" placeholder="Search for a programming language..."
+                    list="language-suggestions" required>
+                <datalist id="language-suggestions">
+                    <option value="Elixir (programming language)">
+                    <option value="MATLAB">
+                    <option value="Rust (programming language)">
+                    <option value="Python (programming language)">
+                    <option value="R (programming language)">
+                    <option value="Zig (programming language)">
+                    <option value="Scala (programming language)">
+                    <option value="Haskell">
+                    <option value="PowerShell">
+                    <option value="Java (programming language)">
+                    <option value="Assembly language">
+                    <option value="Swift (programming language)">
+                    <option value="Lua">
+                    <option value="C Sharp (programming language)">
+                    <option value="C (programming language)">
+                    <option value="Ruby (programming language)">
+                    <option value="TypeScript">
+                    <option value="Apache Groovy">
+                    <option value="JavaScript">
+                    <option value="Dart (programming language)">
+                    <option value="Go (programming language)">
+                    <option value="Kotlin (programming language)">
+                    <option value="PHP">
+                    <option value="C++">
+                </datalist>
+
+                <fieldset>
+                    <legend>Filters</legend>
+                    <label>Typing Discipline:
+                        <select name="typing">
+                            <option value="">Any</option>
+                            <option value="static">Static</option>
+                            <option value="dynamic">Dynamic</option>
+                            <option value="strong">Strong</option>
+                            <option value="weak">Weak</option>
+                        </select>
+                    </label>
+                    <label>Execution Model:
+                        <select name="execution">
+                            <option value="">Any</option>
+                            <option value="interpreted">Interpreted</option>
+                            <option value="compiled">Compiled</option>
+                            <option value="bytecode">Bytecode</option>
+                            <option value="jit">JIT</option>
+                        </select>
+                    </label>
+                    <label>Programming Paradigm:
+                        <select name="paradigm">
+                            <option value="">Any</option>
+                            <option value="object-oriented">Object-Oriented</option>
+                            <option value="functional">Functional</option>
+                            <option value="procedural">Procedural</option>
+                            <option value="logic-based">Logic-based</option>
+                            <option value="multi-paradigm">Multi-paradigm</option>
+                        </select>
+                    </label>
+                    <label>Year of Creation:
+                        <input type="number" name="year" min="1950" max="2025">
+                    </label>
+                    <label>Author/Organization:
+                        <input type="text" name="author">
+                    </label>
+                    <label>Use Cases:
+                        <input type="text" name="use_cases">
+                    </label>
+                    <label>Platform/Ecosystem:
+                        <input type="text" name="platform">
+                    </label>
+                </fieldset>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

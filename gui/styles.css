@@ -1,0 +1,180 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #2b2b2b;
+    color: #a9b7c6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3c3f41;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #4e5254;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: #a9b7c6;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Search Section */
+.search-section {
+    background-color: #3c3f41;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-section h2 {
+    color: #a9b7c6;
+    margin-bottom: 10px;
+}
+
+.search-section input[type="text"],
+.search-section input[type="number"],
+.search-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #4e5254;
+    border-radius: 8px;
+    background-color: #2b2b2b;
+    color: #a9b7c6;
+}
+
+.search-section button {
+    background-color: #4e5254;
+    color: #a9b7c6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-section button:hover {
+    background-color: #6c7072;
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 20px;
+}
+
+.results-list {
+    list-style: none;
+    padding: 0;
+}
+
+.result-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 15px;
+    background-color: #3c3f41;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 15px;
+    /* Add gap between items */
+}
+
+.result-item:hover {
+    background-color: #4e5254;
+    transform: scale(1.02);
+}
+
+.result-item h3 {
+    color: #ffc66d;
+    margin: 0 0 10px 0;
+}
+
+.result-item p {
+    margin: 5px 0;
+}
+
+/* Details Section */
+.details-section {
+    background-color: #3c3f41;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.details-section h2 {
+    color: #ffc66d;
+    margin-bottom: 10px;
+}
+
+.details-section p,
+.details-section ul {
+    margin: 10px 0;
+}
+
+.details-section ul {
+    padding-left: 20px;
+}
+
+.details-section ul li {
+    list-style: disc;
+    color: #a9b7c6;
+}
+
+/* Fieldset Styling */
+fieldset {
+    border: 1px solid #4e5254;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #3c3f41;
+}
+
+legend {
+    color: #a9b7c6;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Input and Select Styling */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #4e5254;
+    border-radius: 8px;
+    background-color: #2b2b2b;
+    color: #a9b7c6;
+    font-family: 'JetBrains Mono', monospace;
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23a9b7c6' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #ffc66d;
+    box-shadow: 0 0 5px #ffc66d;
+}

@@ -1,0 +1,1070 @@
+[
+  {
+    "core": "ProgLang24",
+    "name": "title:Python",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "Python"
+    ],
+    "expected_langs": [
+      "Python"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:Python3",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Python"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:\"Python3.12\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Python"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:Go",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "Go"
+    ],
+    "expected_langs": [
+      "Go"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:Golang",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Go"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:functional",
+    "tp": 13,
+    "fp": 11,
+    "fn": 0,
+    "s1_pre": 0.5416666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.7027027027027027,
+    "found_langs": [
+      "Dart",
+      "Elixir",
+      "Go",
+      "Haskell",
+      "C",
+      "MATLAB",
+      "Scala",
+      "C++",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "PowerShell",
+      "R",
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Ruby",
+      "Zig",
+      "Lua",
+      "Rust",
+      "Swift"
+    ],
+    "expected_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:declarative",
+    "tp": 10,
+    "fp": 11,
+    "fn": 3,
+    "s1_pre": 0.47619047619047616,
+    "s1_rec": 0.7692307692307693,
+    "s1_f1": 0.588235294117647,
+    "found_langs": [
+      "Dart",
+      "Go",
+      "Haskell",
+      "C",
+      "MATLAB",
+      "Scala",
+      "C++",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "PowerShell",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Ruby",
+      "Zig",
+      "Lua",
+      "Rust",
+      "Swift"
+    ],
+    "expected_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:object-oriented",
+    "tp": 14,
+    "fp": 5,
+    "fn": 3,
+    "s1_pre": 0.7368421052631579,
+    "s1_rec": 0.8235294117647058,
+    "s1_f1": 0.7777777777777778,
+    "found_langs": [
+      "Dart",
+      "Go",
+      "C",
+      "MATLAB",
+      "Scala",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "R",
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Ruby",
+      "Lua",
+      "Rust",
+      "Swift"
+    ],
+    "expected_langs": [
+      "PowerShell",
+      "Dart",
+      "Lua",
+      "Python",
+      "Java",
+      "Rust",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala",
+      "C++"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:imperative",
+    "tp": 6,
+    "fp": 2,
+    "fn": 11,
+    "s1_pre": 0.75,
+    "s1_rec": 0.35294117647058826,
+    "s1_f1": 0.48,
+    "found_langs": [
+      "PowerShell",
+      "Elixir",
+      "Python",
+      "Go",
+      "C",
+      "C Sharp",
+      "Ruby",
+      "Scala"
+    ],
+    "expected_langs": [
+      "PowerShell",
+      "Dart",
+      "Lua",
+      "Python",
+      "Java",
+      "Rust",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala",
+      "C++"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:C#",
+    "tp": 1,
+    "fp": 2,
+    "fn": 0,
+    "s1_pre": 0.3333333333333333,
+    "s1_rec": 1.0,
+    "s1_f1": 0.5,
+    "found_langs": [
+      "C++",
+      "C",
+      "C Sharp"
+    ],
+    "expected_langs": [
+      "C Sharp"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:C Sharp",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "C Sharp"
+    ],
+    "expected_langs": [
+      "C Sharp"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:C++",
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "s1_pre": 0.6666666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.8,
+    "found_langs": [
+      "C++",
+      "C",
+      "C Sharp"
+    ],
+    "expected_langs": [
+      "C++",
+      "C"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "title:C plus plus",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "C++",
+      "C"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"JavaScript framework\"",
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "s1_pre": 0.6666666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.8,
+    "found_langs": [
+      "Dart",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"Javascrit framework\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"most modern programming languages\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Dart",
+      "Elixir",
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Zig"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"modern programming languages\"",
+    "tp": 1,
+    "fp": 0,
+    "fn": 7,
+    "s1_pre": 1.0,
+    "s1_rec": 0.125,
+    "s1_f1": 0.2222222222222222,
+    "found_langs": [
+      "Swift"
+    ],
+    "expected_langs": [
+      "Dart",
+      "Elixir",
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Zig"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"trendy programming languages\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 8,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Dart",
+      "Elixir",
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Zig"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"What is the best programming language for web development\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"Top programming languages for web development\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"Best coding languages for building websites\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"Best programming language for web development\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"Best systems programming language for safety\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Go",
+      "Swift",
+      "Zig",
+      "Rust"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"What is a memory-safe programming language\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Swift",
+      "Zig",
+      "Rust"
+    ]
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"Most secure programming language\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Rust"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:Python",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "Python"
+    ],
+    "expected_langs": [
+      "Python"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:Python3",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "Python"
+    ],
+    "expected_langs": [
+      "Python"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:Python3.12",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Python"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:Go",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "Go"
+    ],
+    "expected_langs": [
+      "Go"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:Golang",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "Go"
+    ],
+    "expected_langs": [
+      "Go"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:functional",
+    "tp": 12,
+    "fp": 5,
+    "fn": 1,
+    "s1_pre": 0.7058823529411765,
+    "s1_rec": 0.9230769230769231,
+    "s1_f1": 0.8000000000000002,
+    "found_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "Java",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Assembly language",
+      "Haskell",
+      "C Sharp",
+      "Kotlin",
+      "C",
+      "Swift",
+      "Ruby",
+      "Scala"
+    ],
+    "expected_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:declarative",
+    "tp": 12,
+    "fp": 5,
+    "fn": 1,
+    "s1_pre": 0.7058823529411765,
+    "s1_rec": 0.9230769230769231,
+    "s1_f1": 0.8000000000000002,
+    "found_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "Java",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Assembly language",
+      "Haskell",
+      "C Sharp",
+      "Kotlin",
+      "C",
+      "Swift",
+      "Ruby",
+      "Scala"
+    ],
+    "expected_langs": [
+      "Lua",
+      "R",
+      "Elixir",
+      "Python",
+      "Rust",
+      "JavaScript",
+      "Apache Groovy",
+      "Haskell",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:object-oriented",
+    "tp": 14,
+    "fp": 5,
+    "fn": 3,
+    "s1_pre": 0.7368421052631579,
+    "s1_rec": 0.8235294117647058,
+    "s1_f1": 0.7777777777777778,
+    "found_langs": [
+      "Dart",
+      "Go",
+      "C",
+      "MATLAB",
+      "Scala",
+      "Apache Groovy",
+      "Assembly language",
+      "PHP",
+      "R",
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Ruby",
+      "Lua",
+      "Rust",
+      "Swift"
+    ],
+    "expected_langs": [
+      "PowerShell",
+      "Dart",
+      "Lua",
+      "Python",
+      "Java",
+      "Rust",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala",
+      "C++"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:imperative",
+    "tp": 5,
+    "fp": 2,
+    "fn": 12,
+    "s1_pre": 0.7142857142857143,
+    "s1_rec": 0.29411764705882354,
+    "s1_f1": 0.4166666666666667,
+    "found_langs": [
+      "PowerShell",
+      "Elixir",
+      "Python",
+      "Go",
+      "C Sharp",
+      "C",
+      "Scala"
+    ],
+    "expected_langs": [
+      "PowerShell",
+      "Dart",
+      "Lua",
+      "Python",
+      "Java",
+      "Rust",
+      "Go",
+      "JavaScript",
+      "Apache Groovy",
+      "Mathlab",
+      "TypeScript",
+      "C Sharp",
+      "Kotlin",
+      "Swift",
+      "Ruby",
+      "Scala",
+      "C++"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:C#",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "C Sharp"
+    ],
+    "expected_langs": [
+      "C Sharp"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:C Sharp",
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "s1_pre": 1.0,
+    "s1_rec": 1.0,
+    "s1_f1": 1.0,
+    "found_langs": [
+      "C Sharp"
+    ],
+    "expected_langs": [
+      "C Sharp"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:C++",
+    "tp": 1,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 1.0,
+    "s1_rec": 0.5,
+    "s1_f1": 0.6666666666666666,
+    "found_langs": [
+      "C++"
+    ],
+    "expected_langs": [
+      "C++",
+      "C"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "title:C plus plus",
+    "tp": 1,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 1.0,
+    "s1_rec": 0.5,
+    "s1_f1": 0.6666666666666666,
+    "found_langs": [
+      "C++"
+    ],
+    "expected_langs": [
+      "C++",
+      "C"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"JavaScript framework\"",
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "s1_pre": 0.6666666666666666,
+    "s1_rec": 1.0,
+    "s1_f1": 0.8,
+    "found_langs": [
+      "Dart",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"Javascrit framework\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"most modern programming languages\"",
+    "tp": 1,
+    "fp": 0,
+    "fn": 7,
+    "s1_pre": 1.0,
+    "s1_rec": 0.125,
+    "s1_f1": 0.2222222222222222,
+    "found_langs": [
+      "Swift"
+    ],
+    "expected_langs": [
+      "Dart",
+      "Elixir",
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Zig"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"modern programming languages\"",
+    "tp": 1,
+    "fp": 0,
+    "fn": 7,
+    "s1_pre": 1.0,
+    "s1_rec": 0.125,
+    "s1_f1": 0.2222222222222222,
+    "found_langs": [
+      "Swift"
+    ],
+    "expected_langs": [
+      "Dart",
+      "Elixir",
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Zig"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"trendy programming languages\"",
+    "tp": 1,
+    "fp": 0,
+    "fn": 7,
+    "s1_pre": 1.0,
+    "s1_rec": 0.125,
+    "s1_f1": 0.2222222222222222,
+    "found_langs": [
+      "Swift"
+    ],
+    "expected_langs": [
+      "Dart",
+      "Elixir",
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Kotlin",
+      "Swift",
+      "Zig"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"What is the best programming language for web development\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"Top programming languages for web development\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"Best coding languages for building websites\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"Best programming language for web development\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"Best systems programming language for safety\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 4,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Go",
+      "Swift",
+      "Zig",
+      "Rust"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"What is a memory-safe programming language\"",
+    "tp": 1,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 1.0,
+    "s1_rec": 0.3333333333333333,
+    "s1_f1": 0.5,
+    "found_langs": [
+      "Rust"
+    ],
+    "expected_langs": [
+      "Swift",
+      "Zig",
+      "Rust"
+    ]
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"Most secure programming language\"",
+    "tp": 0,
+    "fp": 0,
+    "fn": 1,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Rust"
+    ]
+  }
+]
