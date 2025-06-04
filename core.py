@@ -51,16 +51,34 @@ def needs_quoting(term: str) -> bool:
     return any(ch.isspace() for ch in term)
 
 
-def build_solr_query(case):
-    return case['name']
-
-
-def run_solr_query_post(query: str, solr_url: str, rows: int = 30):
+def run_solr_query_post(case, solr_url, rows=30, **additional_params):
     payload = {
-        "q":  query,
         "rows": rows,
-        "wt": "json",
+        "wt": "json"
     }
+
+    is_dismax = additional_params.get('defType') in ['dismax', 'edismax']
+
+    if is_dismax:
+        # Für DisMax/eDisMax: Nur den Suchbegriff verwenden
+        query = case.get('query', '')
+
+        # Boost-Faktor hinzufügen, falls vorhanden
+        if 'boost' in case and case['boost']:
+            query = f"{query}^{case['boost']}"
+
+        # Filterabfrage hinzufügen, falls vorhanden
+        if 'filter_query' in case and case['filter_query']:
+            payload['fq'] = case['filter_query']
+
+        payload["q"] = query
+        payload.update(additional_params)
+
+    else:
+        payload["q"] = case.get('standard_query') or case.get('query')
+
+    print(f"DEBUG - Sending to Solr: {payload}")
+
     resp = requests.post(solr_url, data=payload)
     resp.raise_for_status()
     return resp.json()["response"]["docs"]
@@ -112,9 +130,8 @@ def compute_normalized_ranking_score(ranking_info):
     return (total_diff / count) / max_expected_rank
 
 
-def evaluate_case(case, solr_url, core):
-    query = build_solr_query(case)
-    docs = run_solr_query_post(query, solr_url)
+def evaluate_case(case, solr_url, core, **query_params):
+    docs = run_solr_query_post(case, solr_url, 30, **query_params)
     expected_langs = {x["lang"] for x in case["expected_langs"]}
     found_langs = {doc.get('title').replace(
         "(programming language)", "").strip() for doc in docs}
@@ -141,7 +158,8 @@ def evaluate_case(case, solr_url, core):
 
     return {
         "core": core,
-        "name": case["name"],
+        # Änderung hier
+        "name": case.get('standard_query') or case.get('query', ''),
         "tp": tp, "fp": fp, "fn": fn,
         "s1_pre": pre, "s1_rec": rec, "s1_f1": f1,
         "found_langs": list(found_langs),

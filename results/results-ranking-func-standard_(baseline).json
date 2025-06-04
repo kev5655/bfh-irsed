@@ -1,0 +1,426 @@
+[
+  {
+    "core": "ProgLang24_4",
+    "name": "document:functional",
+    "tp": 12,
+    "fp": 5,
+    "fn": 1,
+    "s1_pre": 0.7058823529411765,
+    "s1_rec": 0.9230769230769231,
+    "s1_f1": 0.8000000000000002,
+    "found_langs": [
+      "Scala",
+      "Python",
+      "Go",
+      "R",
+      "Kotlin",
+      "C Sharp",
+      "Swift",
+      "Rust",
+      "Ruby",
+      "Assembly language",
+      "C",
+      "JavaScript",
+      "Java",
+      "Lua",
+      "Apache Groovy",
+      "Elixir",
+      "Haskell"
+    ],
+    "expected_langs": [
+      "Scala",
+      "Python",
+      "R",
+      "Kotlin",
+      "Swift",
+      "Rust",
+      "Ruby",
+      "Apache Groovy",
+      "TypeScript",
+      "Lua",
+      "JavaScript",
+      "Elixir",
+      "Haskell"
+    ],
+    "ranking": [
+      {
+        "lang": "Haskell",
+        "expected_rank": 1,
+        "actual_rank": 17
+      },
+      {
+        "lang": "Elixir",
+        "expected_rank": 2,
+        "actual_rank": 16
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 3,
+        "actual_rank": 1
+      },
+      {
+        "lang": "R",
+        "expected_rank": 4,
+        "actual_rank": 4
+      },
+      {
+        "lang": "Rust",
+        "expected_rank": 5,
+        "actual_rank": 8
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 6,
+        "actual_rank": 2
+      },
+      {
+        "lang": "TypeScript",
+        "expected_rank": 7,
+        "actual_rank": null
+      },
+      {
+        "lang": "JavaScript",
+        "expected_rank": 8,
+        "actual_rank": 12
+      },
+      {
+        "lang": "Kotlin",
+        "expected_rank": 9,
+        "actual_rank": 5
+      },
+      {
+        "lang": "Swift",
+        "expected_rank": 10,
+        "actual_rank": 7
+      },
+      {
+        "lang": "Lua",
+        "expected_rank": 11,
+        "actual_rank": 14
+      },
+      {
+        "lang": "Ruby",
+        "expected_rank": 12,
+        "actual_rank": 9
+      },
+      {
+        "lang": "Apache Groovy",
+        "expected_rank": 13,
+        "actual_rank": 15
+      }
+    ],
+    "ranking_score": 0.37179487179487175,
+    "config_name": "Standard (Baseline)",
+    "config_params": {}
+  },
+  {
+    "core": "ProgLang24_4",
+    "name": "document:\"functional\" AND NOT document:\"object-oriented\"",
+    "tp": 2,
+    "fp": 0,
+    "fn": 11,
+    "s1_pre": 1.0,
+    "s1_rec": 0.15384615384615385,
+    "s1_f1": 0.2666666666666667,
+    "found_langs": [
+      "Elixir",
+      "Haskell"
+    ],
+    "expected_langs": [
+      "Scala",
+      "Python",
+      "R",
+      "Kotlin",
+      "Swift",
+      "Rust",
+      "Ruby",
+      "Apache Groovy",
+      "TypeScript",
+      "Lua",
+      "JavaScript",
+      "Elixir",
+      "Haskell"
+    ],
+    "ranking": [
+      {
+        "lang": "Haskell",
+        "expected_rank": 1,
+        "actual_rank": 2
+      },
+      {
+        "lang": "Elixir",
+        "expected_rank": 2,
+        "actual_rank": 1
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 3,
+        "actual_rank": null
+      },
+      {
+        "lang": "R",
+        "expected_rank": 4,
+        "actual_rank": null
+      },
+      {
+        "lang": "Rust",
+        "expected_rank": 5,
+        "actual_rank": null
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 6,
+        "actual_rank": null
+      },
+      {
+        "lang": "TypeScript",
+        "expected_rank": 7,
+        "actual_rank": null
+      },
+      {
+        "lang": "JavaScript",
+        "expected_rank": 8,
+        "actual_rank": null
+      },
+      {
+        "lang": "Kotlin",
+        "expected_rank": 9,
+        "actual_rank": null
+      },
+      {
+        "lang": "Swift",
+        "expected_rank": 10,
+        "actual_rank": null
+      },
+      {
+        "lang": "Lua",
+        "expected_rank": 11,
+        "actual_rank": null
+      },
+      {
+        "lang": "Ruby",
+        "expected_rank": 12,
+        "actual_rank": null
+      },
+      {
+        "lang": "Apache Groovy",
+        "expected_rank": 13,
+        "actual_rank": null
+      }
+    ],
+    "ranking_score": 0.07692307692307693,
+    "config_name": "Standard (Baseline)",
+    "config_params": {}
+  },
+  {
+    "core": "ProgLang24_4",
+    "name": "document:\"functional programming\"^20",
+    "tp": 11,
+    "fp": 4,
+    "fn": 2,
+    "s1_pre": 0.7333333333333333,
+    "s1_rec": 0.8461538461538461,
+    "s1_f1": 0.7857142857142856,
+    "found_langs": [
+      "Python",
+      "Scala",
+      "Go",
+      "R",
+      "Kotlin",
+      "C Sharp",
+      "Rust",
+      "Ruby",
+      "C",
+      "JavaScript",
+      "Java",
+      "Lua",
+      "Apache Groovy",
+      "Elixir",
+      "Haskell"
+    ],
+    "expected_langs": [
+      "Scala",
+      "Python",
+      "R",
+      "Kotlin",
+      "Swift",
+      "Rust",
+      "Ruby",
+      "Apache Groovy",
+      "TypeScript",
+      "Lua",
+      "JavaScript",
+      "Elixir",
+      "Haskell"
+    ],
+    "ranking": [
+      {
+        "lang": "Haskell",
+        "expected_rank": 1,
+        "actual_rank": 15
+      },
+      {
+        "lang": "Elixir",
+        "expected_rank": 2,
+        "actual_rank": 14
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 3,
+        "actual_rank": 2
+      },
+      {
+        "lang": "R",
+        "expected_rank": 4,
+        "actual_rank": 4
+      },
+      {
+        "lang": "Rust",
+        "expected_rank": 5,
+        "actual_rank": 7
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 6,
+        "actual_rank": 1
+      },
+      {
+        "lang": "TypeScript",
+        "expected_rank": 7,
+        "actual_rank": null
+      },
+      {
+        "lang": "JavaScript",
+        "expected_rank": 8,
+        "actual_rank": 10
+      },
+      {
+        "lang": "Kotlin",
+        "expected_rank": 9,
+        "actual_rank": 5
+      },
+      {
+        "lang": "Swift",
+        "expected_rank": 10,
+        "actual_rank": null
+      },
+      {
+        "lang": "Lua",
+        "expected_rank": 11,
+        "actual_rank": 12
+      },
+      {
+        "lang": "Ruby",
+        "expected_rank": 12,
+        "actual_rank": 8
+      },
+      {
+        "lang": "Apache Groovy",
+        "expected_rank": 13,
+        "actual_rank": 13
+      }
+    ],
+    "ranking_score": 0.3146853146853147,
+    "config_name": "Standard (Baseline)",
+    "config_params": {}
+  },
+  {
+    "core": "ProgLang24_4",
+    "name": "document:\"purely functional\"",
+    "tp": 2,
+    "fp": 0,
+    "fn": 11,
+    "s1_pre": 1.0,
+    "s1_rec": 0.15384615384615385,
+    "s1_f1": 0.2666666666666667,
+    "found_langs": [
+      "Scala",
+      "Haskell"
+    ],
+    "expected_langs": [
+      "Scala",
+      "Python",
+      "R",
+      "Kotlin",
+      "Swift",
+      "Rust",
+      "Ruby",
+      "Apache Groovy",
+      "TypeScript",
+      "Lua",
+      "JavaScript",
+      "Elixir",
+      "Haskell"
+    ],
+    "ranking": [
+      {
+        "lang": "Haskell",
+        "expected_rank": 1,
+        "actual_rank": 2
+      },
+      {
+        "lang": "Elixir",
+        "expected_rank": 2,
+        "actual_rank": null
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 3,
+        "actual_rank": 1
+      },
+      {
+        "lang": "R",
+        "expected_rank": 4,
+        "actual_rank": null
+      },
+      {
+        "lang": "Rust",
+        "expected_rank": 5,
+        "actual_rank": null
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 6,
+        "actual_rank": null
+      },
+      {
+        "lang": "TypeScript",
+        "expected_rank": 7,
+        "actual_rank": null
+      },
+      {
+        "lang": "JavaScript",
+        "expected_rank": 8,
+        "actual_rank": null
+      },
+      {
+        "lang": "Kotlin",
+        "expected_rank": 9,
+        "actual_rank": null
+      },
+      {
+        "lang": "Swift",
+        "expected_rank": 10,
+        "actual_rank": null
+      },
+      {
+        "lang": "Lua",
+        "expected_rank": 11,
+        "actual_rank": null
+      },
+      {
+        "lang": "Ruby",
+        "expected_rank": 12,
+        "actual_rank": null
+      },
+      {
+        "lang": "Apache Groovy",
+        "expected_rank": 13,
+        "actual_rank": null
+      }
+    ],
+    "ranking_score": 0.11538461538461539,
+    "config_name": "Standard (Baseline)",
+    "config_params": {}
+  }
+]
