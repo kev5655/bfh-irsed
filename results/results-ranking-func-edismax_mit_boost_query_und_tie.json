@@ -6,8 +6,10 @@
       "rows": 30,
       "wt": "json",
       "q": "functional",
-      "defType": "dismax",
-      "qf": "document paradigm title"
+      "defType": "edismax",
+      "qf": "paradigm document",
+      "bq": "paradigm:functional^5",
+      "tie": "0.3"
     },
     "tp": 13,
     "fp": 11,
@@ -17,29 +19,29 @@
     "s1_f1": 0.7027027027027027,
     "found_langs": [
       "Haskell",
-      "Apache Groovy",
+      "Rust",
       "Scala",
       "Elixir",
-      "C Sharp",
-      "Rust",
-      "Python",
-      "Lua",
+      "Apache Groovy",
       "Swift",
-      "JavaScript",
-      "Go",
+      "Python",
       "Kotlin",
+      "Go",
+      "C Sharp",
+      "JavaScript",
+      "Lua",
       "Ruby",
       "R",
       "Java",
-      "Assembly language",
-      "C",
       "MATLAB",
       "Zig",
       "PowerShell",
       "TypeScript",
       "Dart",
       "PHP",
-      "C++"
+      "C++",
+      "Assembly language",
+      "C"
     ],
     "expected_langs": [
       "Kotlin",
@@ -80,7 +82,7 @@
       {
         "lang": "Rust",
         "expected_rank": 5,
-        "actual_rank": 6
+        "actual_rank": 2
       },
       {
         "lang": "Python",
@@ -90,27 +92,27 @@
       {
         "lang": "TypeScript",
         "expected_rank": 7,
-        "actual_rank": 21
+        "actual_rank": 19
       },
       {
         "lang": "JavaScript",
         "expected_rank": 8,
-        "actual_rank": 10
+        "actual_rank": 11
       },
       {
         "lang": "Kotlin",
         "expected_rank": 9,
-        "actual_rank": 12
+        "actual_rank": 8
       },
       {
         "lang": "Swift",
         "expected_rank": 10,
-        "actual_rank": 9
+        "actual_rank": 6
       },
       {
         "lang": "Lua",
         "expected_rank": 11,
-        "actual_rank": 8
+        "actual_rank": 12
       },
       {
         "lang": "Ruby",
@@ -120,18 +122,20 @@
       {
         "lang": "Apache Groovy",
         "expected_rank": 13,
-        "actual_rank": 2
+        "actual_rank": 5
       }
     ],
-    "ranking_score": 0.28994082840236685,
-    "ranking_score_sperman": 0.3186813186813187,
-    "ranking_score_ndcg": 0.8967818007884683,
-    "ranking_score_weighted": 0.5963241886318809,
-    "ranking_score_mrr": 0.36428571428571427,
-    "config_name": "DisMax Basic",
+    "ranking_score": 0.27218934911242604,
+    "ranking_score_sperman": 0.45604395604395603,
+    "ranking_score_ndcg": 0.9062846838335792,
+    "ranking_score_weighted": 0.5889761947454255,
+    "ranking_score_mrr": 0.4309523809523809,
+    "config_name": "EDisMax mit Boost Query und Tie",
     "config_params": {
-      "defType": "dismax",
-      "qf": "document paradigm title"
+      "defType": "edismax",
+      "qf": "paradigm document",
+      "bq": "paradigm:functional^5",
+      "tie": "0.3"
     }
   }
 ]

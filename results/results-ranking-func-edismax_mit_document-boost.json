@@ -6,8 +6,8 @@
       "rows": 30,
       "wt": "json",
       "q": "functional",
-      "defType": "dismax",
-      "qf": "document paradigm title"
+      "defType": "edismax",
+      "qf": "paradigm document^10"
     },
     "tp": 13,
     "fp": 11,
@@ -128,10 +128,10 @@
     "ranking_score_ndcg": 0.8967818007884683,
     "ranking_score_weighted": 0.5963241886318809,
     "ranking_score_mrr": 0.36428571428571427,
-    "config_name": "DisMax Basic",
+    "config_name": "EDisMax mit document-Boost",
     "config_params": {
-      "defType": "dismax",
-      "qf": "document paradigm title"
+      "defType": "edismax",
+      "qf": "paradigm document^10"
     }
   }
 ]

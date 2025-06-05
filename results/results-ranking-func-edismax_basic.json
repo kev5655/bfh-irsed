@@ -44,17 +44,17 @@
     "expected_langs": [
       "Kotlin",
       "Apache Groovy",
-      "R",
-      "Haskell",
-      "TypeScript",
-      "Lua",
-      "Ruby",
-      "JavaScript",
-      "Elixir",
-      "Python",
-      "Swift",
       "Scala",
-      "Rust"
+      "JavaScript",
+      "Ruby",
+      "Elixir",
+      "Haskell",
+      "Swift",
+      "TypeScript",
+      "Rust",
+      "Lua",
+      "R",
+      "Python"
     ],
     "ranking": [
       {
@@ -124,6 +124,10 @@
       }
     ],
     "ranking_score": 0.28994082840236685,
+    "ranking_score_sperman": 0.3186813186813187,
+    "ranking_score_ndcg": 0.8967818007884683,
+    "ranking_score_weighted": 0.5963241886318809,
+    "ranking_score_mrr": 0.36428571428571427,
     "config_name": "EDisMax Basic",
     "config_params": {
       "defType": "edismax",

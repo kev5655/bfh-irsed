@@ -35,17 +35,17 @@
     "expected_langs": [
       "Kotlin",
       "Apache Groovy",
-      "R",
-      "Haskell",
-      "TypeScript",
-      "Lua",
-      "Ruby",
-      "JavaScript",
-      "Elixir",
-      "Python",
-      "Swift",
       "Scala",
-      "Rust"
+      "JavaScript",
+      "Ruby",
+      "Elixir",
+      "Haskell",
+      "Swift",
+      "TypeScript",
+      "Rust",
+      "Lua",
+      "R",
+      "Python"
     ],
     "ranking": [
       {
@@ -115,6 +115,10 @@
       }
     ],
     "ranking_score": 0.22435897435897434,
+    "ranking_score_sperman": 0.34965034965034975,
+    "ranking_score_ndcg": 0.8967818007884683,
+    "ranking_score_weighted": 0.47935120435120426,
+    "ranking_score_mrr": 0.36428571428571427,
     "config_name": "Standard (Baseline)",
     "config_params": {}
   }

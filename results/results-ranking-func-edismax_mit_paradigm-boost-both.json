@@ -44,17 +44,17 @@
     "expected_langs": [
       "Kotlin",
       "Apache Groovy",
-      "R",
-      "Haskell",
-      "TypeScript",
-      "Lua",
-      "Ruby",
-      "JavaScript",
-      "Elixir",
-      "Python",
-      "Swift",
       "Scala",
-      "Rust"
+      "JavaScript",
+      "Ruby",
+      "Elixir",
+      "Haskell",
+      "Swift",
+      "TypeScript",
+      "Rust",
+      "Lua",
+      "R",
+      "Python"
     ],
     "ranking": [
       {
@@ -124,6 +124,10 @@
       }
     ],
     "ranking_score": 0.46745562130177515,
+    "ranking_score_sperman": 0.32417582417582413,
+    "ranking_score_ndcg": 0.8620426013332596,
+    "ranking_score_weighted": 1.132713440405748,
+    "ranking_score_mrr": 0.3089869281045752,
     "config_name": "EDisMax mit Paradigm-Boost-Both",
     "config_params": {
       "defType": "edismax",

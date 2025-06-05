@@ -27,6 +27,10 @@ class EvaluationResult:
     expected_langs: List[str]
     ranking: List[RankingInfo]
     ranking_score: float
+    ranking_score_sperman: float
+    ranking_score_ndcg: float
+    ranking_score_weighted: float
+    ranking_score_mrr: float
 
 
 def precision(TP, FP):

@@ -1,0 +1,163 @@
+[
+  {
+    "core": "ProgLang24_4",
+    "name": "document:object-oriented",
+    "solr_query": {
+      "rows": 30,
+      "wt": "json",
+      "q": "object-oriented",
+      "defType": "edismax",
+      "qf": "paradigm document^10",
+      "tie": "0.3"
+    },
+    "tp": 16,
+    "fp": 8,
+    "fn": 1,
+    "s1_pre": 0.6666666666666666,
+    "s1_rec": 0.9411764705882353,
+    "s1_f1": 0.7804878048780487,
+    "found_langs": [
+      "Apache Groovy",
+      "Ruby",
+      "JavaScript",
+      "Scala",
+      "Python",
+      "Java",
+      "Kotlin",
+      "Assembly language",
+      "Swift",
+      "Elixir",
+      "C",
+      "MATLAB",
+      "Go",
+      "C Sharp",
+      "R",
+      "PHP",
+      "Rust",
+      "Lua",
+      "TypeScript",
+      "Dart",
+      "PowerShell",
+      "C++",
+      "Zig",
+      "Haskell"
+    ],
+    "expected_langs": [
+      "Apache Groovy",
+      "C++",
+      "Java",
+      "PowerShell",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Dart",
+      "Rust",
+      "Ruby",
+      "Swift",
+      "Go",
+      "Mathlab",
+      "Lua",
+      "Kotlin",
+      "C Sharp",
+      "Scala"
+    ],
+    "ranking": [
+      {
+        "lang": "Java",
+        "expected_rank": 1,
+        "actual_rank": 6
+      },
+      {
+        "lang": "C Sharp",
+        "expected_rank": 2,
+        "actual_rank": 14
+      },
+      {
+        "lang": "C++",
+        "expected_rank": 3,
+        "actual_rank": 22
+      },
+      {
+        "lang": "Kotlin",
+        "expected_rank": 4,
+        "actual_rank": 7
+      },
+      {
+        "lang": "Swift",
+        "expected_rank": 5,
+        "actual_rank": 9
+      },
+      {
+        "lang": "Apache Groovy",
+        "expected_rank": 6,
+        "actual_rank": 1
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 7,
+        "actual_rank": 5
+      },
+      {
+        "lang": "Ruby",
+        "expected_rank": 8,
+        "actual_rank": 2
+      },
+      {
+        "lang": "TypeScript",
+        "expected_rank": 9,
+        "actual_rank": 19
+      },
+      {
+        "lang": "JavaScript",
+        "expected_rank": 10,
+        "actual_rank": 3
+      },
+      {
+        "lang": "PowerShell",
+        "expected_rank": 11,
+        "actual_rank": 21
+      },
+      {
+        "lang": "Go",
+        "expected_rank": 12,
+        "actual_rank": 13
+      },
+      {
+        "lang": "Rust",
+        "expected_rank": 13,
+        "actual_rank": 17
+      },
+      {
+        "lang": "Dart",
+        "expected_rank": 14,
+        "actual_rank": 20
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 15,
+        "actual_rank": 4
+      },
+      {
+        "lang": "Mathlab",
+        "expected_rank": 16,
+        "actual_rank": null
+      },
+      {
+        "lang": "Lua",
+        "expected_rank": 17,
+        "actual_rank": 18
+      }
+    ],
+    "ranking_score": 0.3897058823529412,
+    "ranking_score_sperman": 0.15882352941176472,
+    "ranking_score_ndcg": 0.39341549876345744,
+    "ranking_score_weighted": 1.567771056557821,
+    "ranking_score_mrr": 0.1075036075036075,
+    "config_name": "EDisMax mit document-Boost",
+    "config_params": {
+      "defType": "edismax",
+      "qf": "paradigm document^10",
+      "tie": "0.3"
+    }
+  }
+]
