@@ -7,7 +7,7 @@
       "wt": "json",
       "q": "functional",
       "defType": "edismax",
-      "qf": "paradigm^10 document^3 title^5"
+      "qf": "paradigm^10 document^2"
     },
     "tp": 13,
     "fp": 11,
@@ -17,27 +17,27 @@
     "s1_f1": 0.7027027027027027,
     "found_langs": [
       "Haskell",
-      "Apache Groovy",
-      "Scala",
-      "Elixir",
-      "C Sharp",
-      "Rust",
-      "Python",
-      "Lua",
       "Swift",
-      "JavaScript",
-      "Go",
       "Kotlin",
+      "Rust",
       "MATLAB",
       "Zig",
       "PowerShell",
+      "Elixir",
+      "Scala",
       "Ruby",
       "TypeScript",
       "Dart",
-      "R",
+      "Go",
       "PHP",
+      "Apache Groovy",
+      "Python",
+      "R",
+      "JavaScript",
       "C++",
+      "C Sharp",
       "Java",
+      "Lua",
       "Assembly language",
       "C"
     ],
@@ -65,69 +65,69 @@
       {
         "lang": "Elixir",
         "expected_rank": 2,
-        "actual_rank": 4
+        "actual_rank": 8
       },
       {
         "lang": "Scala",
         "expected_rank": 3,
-        "actual_rank": 3
+        "actual_rank": 9
       },
       {
         "lang": "R",
         "expected_rank": 4,
-        "actual_rank": 19
+        "actual_rank": 17
       },
       {
         "lang": "Rust",
         "expected_rank": 5,
-        "actual_rank": 6
+        "actual_rank": 4
       },
       {
         "lang": "Python",
         "expected_rank": 6,
-        "actual_rank": 7
+        "actual_rank": 16
       },
       {
         "lang": "TypeScript",
         "expected_rank": 7,
-        "actual_rank": 17
+        "actual_rank": 11
       },
       {
         "lang": "JavaScript",
         "expected_rank": 8,
-        "actual_rank": 10
+        "actual_rank": 18
       },
       {
         "lang": "Kotlin",
         "expected_rank": 9,
-        "actual_rank": 12
+        "actual_rank": 3
       },
       {
         "lang": "Swift",
         "expected_rank": 10,
-        "actual_rank": 9
+        "actual_rank": 2
       },
       {
         "lang": "Lua",
         "expected_rank": 11,
-        "actual_rank": 8
+        "actual_rank": 22
       },
       {
         "lang": "Ruby",
         "expected_rank": 12,
-        "actual_rank": 16
+        "actual_rank": 10
       },
       {
         "lang": "Apache Groovy",
         "expected_rank": 13,
-        "actual_rank": 2
+        "actual_rank": 15
       }
     ],
-    "ranking_score": 0.3136094674556213,
-    "config_name": "EDisMax mit Paradigm-Boost",
+    "ranking_score": 0.46745562130177515,
+    "config_name": "EDisMax mit Paradigm-Boost-Both",
     "config_params": {
       "defType": "edismax",
-      "qf": "paradigm^10 document^3 title^5"
+      "qf": "paradigm^10 document^2"
     }
   }
 ]
