@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 800px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "lightblue", "id": "Elixir", "label": "Elixir", "shape": "dot", "size": 20, "title": "Elixir: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Clojure", "label": "Clojure", "shape": "dot", "size": 20, "title": "Clojure: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "Erlang", "label": "Erlang", "shape": "dot", "size": 25, "title": "Erlang: 4 Einfl\u00fcsse"}, {"color": "orange", "id": "Ruby", "label": "Ruby", "shape": "dot", "size": 25, "title": "Ruby: 5 Einfl\u00fcsse"}, {"color": "lightblue", "id": "MATLAB", "label": "MATLAB", "shape": "dot", "size": 20, "title": "MATLAB: 0 Einfl\u00fcsse"}, {"color": "orange", "id": "APL", "label": "APL", "shape": "dot", "size": 25, "title": "APL: 3 Einfl\u00fcsse"}, {"color": "lightblue", "id": "EISPACK", "label": "EISPACK", "shape": "dot", "size": 20, "title": "EISPACK: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Fortran", "label": "Fortran", "shape": "dot", "size": 20, "title": "Fortran: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "LINPACK", "label": "LINPACK", "shape": "dot", "size": 20, "title": "LINPACK: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "PL/0", "label": "PL/0", "shape": "dot", "size": 20, "title": "PL/0: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Speakeasy", "label": "Speakeasy", "shape": "dot", "size": 20, "title": "Speakeasy: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Rust", "label": "Rust", "shape": "dot", "size": 20, "title": "Rust: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Alef", "label": "Alef", "shape": "dot", "size": 20, "title": "Alef: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "BETA", "label": "BETA", "shape": "dot", "size": 20, "title": "BETA: 1 Einfl\u00fcsse"}, {"color": "red", "id": "CLU", "label": "CLU", "shape": "dot", "size": 30, "title": "CLU: 7 Einfl\u00fcsse"}, {"color": "red", "id": "C#", "label": "C#", "shape": "dot", "size": 30, "title": "C#: 7 Einfl\u00fcsse"}, {"color": "red", "id": "C++", "label": "C++", "shape": "dot", "size": 30, "title": "C++: 9 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Cyclone", "label": "Cyclone", "shape": "dot", "size": 20, "title": "Cyclone: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Elm", "label": "Elm", "shape": "dot", "size": 20, "title": "Elm: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "Haskell", "label": "Haskell", "shape": "dot", "size": 25, "title": "Haskell: 5 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Hermes", "label": "Hermes", "shape": "dot", "size": 20, "title": "Hermes: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Limbo", "label": "Limbo", "shape": "dot", "size": 20, "title": "Limbo: 2 Einfl\u00fcsse"}, {"color": "orange", "id": "Mesa", "label": "Mesa", "shape": "dot", "size": 25, "title": "Mesa: 3 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Napier", "label": "Napier", "shape": "dot", "size": 20, "title": "Napier: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Newsqueak", "label": "Newsqueak", "shape": "dot", "size": 20, "title": "Newsqueak: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "NIL", "label": "NIL", "shape": "dot", "size": 20, "title": "NIL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "OCaml", "label": "OCaml", "shape": "dot", "size": 20, "title": "OCaml: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Sather", "label": "Sather", "shape": "dot", "size": 20, "title": "Sather: 1 Einfl\u00fcsse"}, {"color": "red", "id": "Scheme", "label": "Scheme", "shape": "dot", "size": 30, "title": "Scheme: 6 Einfl\u00fcsse"}, {"color": "orange", "id": "Standard ML", "label": "Standard ML", "shape": "dot", "size": 25, "title": "Standard ML: 3 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Swift", "label": "Swift", "shape": "dot", "size": 20, "title": "Swift: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "Python", "label": "Python", "shape": "dot", "size": 25, "title": "Python: 5 Einfl\u00fcsse"}, {"color": "lightblue", "id": "ABC", "label": "ABC", "shape": "dot", "size": 20, "title": "ABC: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "Ada", "label": "Ada", "shape": "dot", "size": 25, "title": "Ada: 3 Einfl\u00fcsse"}, {"color": "orange", "id": "ALGOL 68", "label": "ALGOL 68", "shape": "dot", "size": 25, "title": "ALGOL 68: 3 Einfl\u00fcsse"}, {"color": "red", "id": "C", "label": "C", "shape": "dot", "size": 30, "title": "C: 6 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Dylan", "label": "Dylan", "shape": "dot", "size": 20, "title": "Dylan: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Icon", "label": "Icon", "shape": "dot", "size": 20, "title": "Icon: 2 Einfl\u00fcsse"}, {"color": "orange", "id": "Lisp", "label": "Lisp", "shape": "dot", "size": 25, "title": "Lisp: 5 Einfl\u00fcsse"}, {"color": "orange", "id": "Modula-3", "label": "Modula-3", "shape": "dot", "size": 25, "title": "Modula-3: 3 Einfl\u00fcsse"}, {"color": "orange", "id": "Perl", "label": "Perl", "shape": "dot", "size": 25, "title": "Perl: 4 Einfl\u00fcsse"}, {"color": "lightblue", "id": "R", "label": "R", "shape": "dot", "size": 20, "title": "R: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "S", "label": "S", "shape": "dot", "size": 20, "title": "S: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Zig", "label": "Zig", "shape": "dot", "size": 20, "title": "Zig: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "LLVM IR", "label": "LLVM IR", "shape": "dot", "size": 20, "title": "LLVM IR: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Go", "label": "Go", "shape": "dot", "size": 20, "title": "Go: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Scala", "label": "Scala", "shape": "dot", "size": 20, "title": "Scala: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Common Lisp", "label": "Common Lisp", "shape": "dot", "size": 20, "title": "Common Lisp: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "Eiffel", "label": "Eiffel", "shape": "dot", "size": 25, "title": "Eiffel: 5 Einfl\u00fcsse"}, {"color": "red", "id": "Java", "label": "Java", "shape": "dot", "size": 30, "title": "Java: 8 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Oz", "label": "Oz", "shape": "dot", "size": 20, "title": "Oz: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Pizza", "label": "Pizza", "shape": "dot", "size": 20, "title": "Pizza: 1 Einfl\u00fcsse"}, {"color": "red", "id": "Smalltalk", "label": "Smalltalk", "shape": "dot", "size": 30, "title": "Smalltalk: 7 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Clean", "label": "Clean", "shape": "dot", "size": 20, "title": "Clean: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "FP", "label": "FP", "shape": "dot", "size": 20, "title": "FP: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Gofer", "label": "Gofer", "shape": "dot", "size": 20, "title": "Gofer: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Hope and Hope", "label": "Hope and Hope", "shape": "dot", "size": 20, "title": "Hope and Hope: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Id", "label": "Id", "shape": "dot", "size": 20, "title": "Id: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "ISWIM", "label": "ISWIM", "shape": "dot", "size": 20, "title": "ISWIM: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "KRC", "label": "KRC", "shape": "dot", "size": 20, "title": "KRC: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Miranda", "label": "Miranda", "shape": "dot", "size": 20, "title": "Miranda: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "ML and Standard ML", "label": "ML and Standard ML", "shape": "dot", "size": 20, "title": "ML and Standard ML: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Orwell", "label": "Orwell", "shape": "dot", "size": 20, "title": "Orwell: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "SASL", "label": "SASL", "shape": "dot", "size": 20, "title": "SASL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "SISAL", "label": "SISAL", "shape": "dot", "size": 20, "title": "SISAL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "PowerShell", "label": "PowerShell", "shape": "dot", "size": 20, "title": "PowerShell: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Ksh", "label": "Ksh", "shape": "dot", "size": 20, "title": "Ksh: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "CL", "label": "CL", "shape": "dot", "size": 20, "title": "CL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "DCL", "label": "DCL", "shape": "dot", "size": 20, "title": "DCL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "SQL", "label": "SQL", "shape": "dot", "size": 20, "title": "SQL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Tcl", "label": "Tcl", "shape": "dot", "size": 20, "title": "Tcl: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Tk", "label": "Tk", "shape": "dot", "size": 20, "title": "Tk: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Chef", "label": "Chef", "shape": "dot", "size": 20, "title": "Chef: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Puppet", "label": "Puppet", "shape": "dot", "size": 20, "title": "Puppet: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Simula67", "label": "Simula67", "shape": "dot", "size": 20, "title": "Simula67: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Ada 83", "label": "Ada 83", "shape": "dot", "size": 20, "title": "Ada 83: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Oberon", "label": "Oberon", "shape": "dot", "size": 20, "title": "Oberon: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Objective-C", "label": "Objective-C", "shape": "dot", "size": 20, "title": "Objective-C: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "UCSD Pascal", "label": "UCSD Pascal", "shape": "dot", "size": 20, "title": "UCSD Pascal: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Object Pascal", "label": "Object Pascal", "shape": "dot", "size": 20, "title": "Object Pascal: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Assembly language", "label": "Assembly language", "shape": "dot", "size": 20, "title": "Assembly language: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "D", "label": "D", "shape": "dot", "size": 20, "title": "D: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Lua", "label": "Lua", "shape": "dot", "size": 20, "title": "Lua: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Modula", "label": "Modula", "shape": "dot", "size": 20, "title": "Modula: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "SNOBOL", "label": "SNOBOL", "shape": "dot", "size": 20, "title": "SNOBOL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "C Sharp", "label": "C Sharp", "shape": "dot", "size": 20, "title": "C Sharp: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "C\u03c9", "label": "C\u03c9", "shape": "dot", "size": 20, "title": "C\u03c9: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "F#", "label": "F#", "shape": "dot", "size": 25, "title": "F#: 3 Einfl\u00fcsse"}, {"color": "lightblue", "id": "J#", "label": "J#", "shape": "dot", "size": 20, "title": "J#: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "J++", "label": "J++", "shape": "dot", "size": 20, "title": "J++: 1 Einfl\u00fcsse"}, {"color": "orange", "id": "JavaScript", "label": "JavaScript", "shape": "dot", "size": 25, "title": "JavaScript: 5 Einfl\u00fcsse"}, {"color": "orange", "id": "ML", "label": "ML", "shape": "dot", "size": 25, "title": "ML: 3 Einfl\u00fcsse"}, {"color": "lightblue", "id": "VB", "label": "VB", "shape": "dot", "size": 20, "title": "VB: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "B ( BCPL", "label": "B ( BCPL", "shape": "dot", "size": 20, "title": "B ( BCPL: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "CPL )", "label": "CPL )", "shape": "dot", "size": 20, "title": "CPL ): 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "PL/I", "label": "PL/I", "shape": "dot", "size": 20, "title": "PL/I: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "FORTRAN", "label": "FORTRAN", "shape": "dot", "size": 20, "title": "FORTRAN: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Basic", "label": "Basic", "shape": "dot", "size": 20, "title": "Basic: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "TypeScript", "label": "TypeScript", "shape": "dot", "size": 20, "title": "TypeScript: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "ActionScript", "label": "ActionScript", "shape": "dot", "size": 20, "title": "ActionScript: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Apache Groovy", "label": "Apache Groovy", "shape": "dot", "size": 20, "title": "Apache Groovy: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Self", "label": "Self", "shape": "dot", "size": 20, "title": "Self: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "AWK", "label": "AWK", "shape": "dot", "size": 20, "title": "AWK: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "HyperTalk", "label": "HyperTalk", "shape": "dot", "size": 20, "title": "HyperTalk: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Dart", "label": "Dart", "shape": "dot", "size": 20, "title": "Dart: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Strongtalk", "label": "Strongtalk", "shape": "dot", "size": 20, "title": "Strongtalk: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Oberon-2", "label": "Oberon-2", "shape": "dot", "size": 20, "title": "Oberon-2: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Active Oberon", "label": "Active Oberon", "shape": "dot", "size": 20, "title": "Active Oberon: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "communicating sequential processes", "label": "communicating sequential processes", "shape": "dot", "size": 20, "title": "communicating sequential processes: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Pascal", "label": "Pascal", "shape": "dot", "size": 20, "title": "Pascal: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Modula-2", "label": "Modula-2", "shape": "dot", "size": 20, "title": "Modula-2: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "BCPL", "label": "BCPL", "shape": "dot", "size": 20, "title": "BCPL: 2 Einfl\u00fcsse"}, {"color": "lightblue", "id": "occam", "label": "occam", "shape": "dot", "size": 20, "title": "occam: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Kotlin", "label": "Kotlin", "shape": "dot", "size": 20, "title": "Kotlin: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Gosu", "label": "Gosu", "shape": "dot", "size": 20, "title": "Gosu: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Groovy", "label": "Groovy", "shape": "dot", "size": 20, "title": "Groovy: 1 Einfl\u00fcsse"}, {"color": "lightblue", "id": "PHP", "label": "PHP", "shape": "dot", "size": 20, "title": "PHP: 0 Einfl\u00fcsse"}, {"color": "lightblue", "id": "Simula", "label": "Simula", "shape": "dot", "size": 20, "title": "Simula: 1 Einfl\u00fcsse"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "Clojure", "title": "Clojure beeinflusst Elixir", "to": "Elixir"}, {"arrows": "to", "from": "Erlang", "title": "Erlang beeinflusst Elixir", "to": "Elixir"}, {"arrows": "to", "from": "Erlang", "title": "Erlang beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Erlang", "title": "Erlang beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Erlang", "title": "Erlang beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "Ruby", "title": "Ruby beeinflusst Elixir", "to": "Elixir"}, {"arrows": "to", "from": "Ruby", "title": "Ruby beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Ruby", "title": "Ruby beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "Ruby", "title": "Ruby beeinflusst Apache Groovy", "to": "Apache Groovy"}, {"arrows": "to", "from": "Ruby", "title": "Ruby beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "APL", "title": "APL beeinflusst MATLAB", "to": "MATLAB"}, {"arrows": "to", "from": "APL", "title": "APL beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "APL", "title": "APL beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "EISPACK", "title": "EISPACK beeinflusst MATLAB", "to": "MATLAB"}, {"arrows": "to", "from": "Fortran", "title": "Fortran beeinflusst MATLAB", "to": "MATLAB"}, {"arrows": "to", "from": "LINPACK", "title": "LINPACK beeinflusst MATLAB", "to": "MATLAB"}, {"arrows": "to", "from": "PL/0", "title": "PL/0 beeinflusst MATLAB", "to": "MATLAB"}, {"arrows": "to", "from": "Speakeasy", "title": "Speakeasy beeinflusst MATLAB", "to": "MATLAB"}, {"arrows": "to", "from": "Rust", "title": "Rust beeinflusst Zig", "to": "Zig"}, {"arrows": "to", "from": "Rust", "title": "Rust beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "Alef", "title": "Alef beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Alef", "title": "Alef beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "BETA", "title": "BETA beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst Lua", "to": "Lua"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "CLU", "title": "CLU beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst TypeScript", "to": "TypeScript"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "C#", "title": "C# beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Zig", "to": "Zig"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Lua", "to": "Lua"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "C++", "title": "C++ beeinflusst PHP", "to": "PHP"}, {"arrows": "to", "from": "Cyclone", "title": "Cyclone beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Elm", "title": "Elm beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Haskell", "title": "Haskell beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Haskell", "title": "Haskell beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Haskell", "title": "Haskell beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Haskell", "title": "Haskell beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "Haskell", "title": "Haskell beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "Hermes", "title": "Hermes beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Limbo", "title": "Limbo beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Limbo", "title": "Limbo beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Mesa", "title": "Mesa beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Mesa", "title": "Mesa beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Mesa", "title": "Mesa beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "Napier", "title": "Napier beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Newsqueak", "title": "Newsqueak beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Newsqueak", "title": "Newsqueak beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "NIL", "title": "NIL beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "OCaml", "title": "OCaml beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "OCaml", "title": "OCaml beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Sather", "title": "Sather beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Scheme", "title": "Scheme beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Scheme", "title": "Scheme beeinflusst R", "to": "R"}, {"arrows": "to", "from": "Scheme", "title": "Scheme beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Scheme", "title": "Scheme beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Scheme", "title": "Scheme beeinflusst Lua", "to": "Lua"}, {"arrows": "to", "from": "Scheme", "title": "Scheme beeinflusst JavaScript", "to": "JavaScript"}, {"arrows": "to", "from": "Standard ML", "title": "Standard ML beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Standard ML", "title": "Standard ML beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Standard ML", "title": "Standard ML beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Swift", "title": "Swift beeinflusst Rust", "to": "Rust"}, {"arrows": "to", "from": "Python", "title": "Python beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Python", "title": "Python beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "Python", "title": "Python beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Python", "title": "Python beeinflusst Apache Groovy", "to": "Apache Groovy"}, {"arrows": "to", "from": "Python", "title": "Python beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "ABC", "title": "ABC beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Ada", "title": "Ada beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Ada", "title": "Ada beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Ada", "title": "Ada beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "ALGOL 68", "title": "ALGOL 68 beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "ALGOL 68", "title": "ALGOL 68 beeinflusst C", "to": "C"}, {"arrows": "to", "from": "ALGOL 68", "title": "ALGOL 68 beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "C", "title": "C beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "C", "title": "C beeinflusst Zig", "to": "Zig"}, {"arrows": "to", "from": "C", "title": "C beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "C", "title": "C beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "C", "title": "C beeinflusst PHP", "to": "PHP"}, {"arrows": "to", "from": "C", "title": "C beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "Dylan", "title": "Dylan beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Dylan", "title": "Dylan beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Icon", "title": "Icon beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Icon", "title": "Icon beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "Lisp", "title": "Lisp beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Lisp", "title": "Lisp beeinflusst R", "to": "R"}, {"arrows": "to", "from": "Lisp", "title": "Lisp beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Lisp", "title": "Lisp beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Lisp", "title": "Lisp beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Modula-3", "title": "Modula-3 beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Modula-3", "title": "Modula-3 beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Modula-3", "title": "Modula-3 beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "Perl", "title": "Perl beeinflusst Python", "to": "Python"}, {"arrows": "to", "from": "Perl", "title": "Perl beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Perl", "title": "Perl beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Perl", "title": "Perl beeinflusst PHP", "to": "PHP"}, {"arrows": "to", "from": "S", "title": "S beeinflusst R", "to": "R"}, {"arrows": "to", "from": "LLVM IR", "title": "LLVM IR beeinflusst Zig", "to": "Zig"}, {"arrows": "to", "from": "Go", "title": "Go beeinflusst Zig", "to": "Zig"}, {"arrows": "to", "from": "Scala", "title": "Scala beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "Scala", "title": "Scala beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "Common Lisp", "title": "Common Lisp beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Eiffel", "title": "Eiffel beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Eiffel", "title": "Eiffel beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Eiffel", "title": "Eiffel beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "Eiffel", "title": "Eiffel beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Eiffel", "title": "Eiffel beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst TypeScript", "to": "TypeScript"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst Apache Groovy", "to": "Apache Groovy"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst JavaScript", "to": "JavaScript"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "Java", "title": "Java beeinflusst PHP", "to": "PHP"}, {"arrows": "to", "from": "Oz", "title": "Oz beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Pizza", "title": "Pizza beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst Scala", "to": "Scala"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst Apache Groovy", "to": "Apache Groovy"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Smalltalk", "title": "Smalltalk beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "Clean", "title": "Clean beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "FP", "title": "FP beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Gofer", "title": "Gofer beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Hope and Hope", "title": "Hope and Hope beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Id", "title": "Id beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "ISWIM", "title": "ISWIM beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "KRC", "title": "KRC beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Miranda", "title": "Miranda beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "ML and Standard ML", "title": "ML and Standard ML beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Orwell", "title": "Orwell beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "SASL", "title": "SASL beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "SISAL", "title": "SISAL beeinflusst Haskell", "to": "Haskell"}, {"arrows": "to", "from": "Ksh", "title": "Ksh beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "CL", "title": "CL beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "DCL", "title": "DCL beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "SQL", "title": "SQL beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Tcl", "title": "Tcl beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Tcl", "title": "Tcl beeinflusst PHP", "to": "PHP"}, {"arrows": "to", "from": "Tk", "title": "Tk beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Chef", "title": "Chef beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Puppet", "title": "Puppet beeinflusst PowerShell", "to": "PowerShell"}, {"arrows": "to", "from": "Simula67", "title": "Simula67 beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Ada 83", "title": "Ada 83 beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Oberon", "title": "Oberon beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Oberon", "title": "Oberon beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Objective-C", "title": "Objective-C beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Objective-C", "title": "Objective-C beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "UCSD Pascal", "title": "UCSD Pascal beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Object Pascal", "title": "Object Pascal beeinflusst Java", "to": "Java"}, {"arrows": "to", "from": "Object Pascal", "title": "Object Pascal beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "D", "title": "D beeinflusst Swift", "to": "Swift"}, {"arrows": "to", "from": "Lua", "title": "Lua beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "Modula", "title": "Modula beeinflusst Lua", "to": "Lua"}, {"arrows": "to", "from": "Modula", "title": "Modula beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "SNOBOL", "title": "SNOBOL beeinflusst Lua", "to": "Lua"}, {"arrows": "to", "from": "C\u03c9", "title": "C\u03c9 beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "F#", "title": "F# beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "F#", "title": "F# beeinflusst TypeScript", "to": "TypeScript"}, {"arrows": "to", "from": "F#", "title": "F# beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "J#", "title": "J# beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "J++", "title": "J++ beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "JavaScript", "title": "JavaScript beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "JavaScript", "title": "JavaScript beeinflusst TypeScript", "to": "TypeScript"}, {"arrows": "to", "from": "JavaScript", "title": "JavaScript beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "JavaScript", "title": "JavaScript beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "JavaScript", "title": "JavaScript beeinflusst PHP", "to": "PHP"}, {"arrows": "to", "from": "ML", "title": "ML beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "ML", "title": "ML beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "ML", "title": "ML beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "VB", "title": "VB beeinflusst C Sharp", "to": "C Sharp"}, {"arrows": "to", "from": "B ( BCPL", "title": "B ( BCPL beeinflusst C", "to": "C"}, {"arrows": "to", "from": "CPL )", "title": "CPL ) beeinflusst C", "to": "C"}, {"arrows": "to", "from": "PL/I", "title": "PL/I beeinflusst C", "to": "C"}, {"arrows": "to", "from": "FORTRAN", "title": "FORTRAN beeinflusst C", "to": "C"}, {"arrows": "to", "from": "Basic", "title": "Basic beeinflusst Ruby", "to": "Ruby"}, {"arrows": "to", "from": "TypeScript", "title": "TypeScript beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "ActionScript", "title": "ActionScript beeinflusst TypeScript", "to": "TypeScript"}, {"arrows": "to", "from": "Self", "title": "Self beeinflusst JavaScript", "to": "JavaScript"}, {"arrows": "to", "from": "AWK", "title": "AWK beeinflusst JavaScript", "to": "JavaScript"}, {"arrows": "to", "from": "HyperTalk", "title": "HyperTalk beeinflusst JavaScript", "to": "JavaScript"}, {"arrows": "to", "from": "Strongtalk", "title": "Strongtalk beeinflusst Dart", "to": "Dart"}, {"arrows": "to", "from": "Oberon-2", "title": "Oberon-2 beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Active Oberon", "title": "Active Oberon beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "communicating sequential processes", "title": "communicating sequential processes beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Pascal", "title": "Pascal beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Modula-2", "title": "Modula-2 beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Modula-2", "title": "Modula-2 beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "BCPL", "title": "BCPL beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "BCPL", "title": "BCPL beeinflusst C++", "to": "C++"}, {"arrows": "to", "from": "occam", "title": "occam beeinflusst Go", "to": "Go"}, {"arrows": "to", "from": "Gosu", "title": "Gosu beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "Groovy", "title": "Groovy beeinflusst Kotlin", "to": "Kotlin"}, {"arrows": "to", "from": "Simula", "title": "Simula beeinflusst C++", "to": "C++"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -50, "centralGravity": 0.01, "springLength": 100, "springConstant": 0.08}, "maxVelocity": 50, "solver": "forceAtlas2Based", "timestep": 0.35, "stabilization": {"enabled": true, "iterations": 1000}}, "nodes": {"font": {"size": 16, "face": "Tahoma", "bold": true}}, "edges": {"arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "color": {"inherit": false, "color": "#aaaaaa"}, "smooth": {"enabled": true, "type": "dynamic"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
