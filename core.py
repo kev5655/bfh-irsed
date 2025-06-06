@@ -31,6 +31,7 @@ class EvaluationResult:
     ranking_score_ndcg: float
     ranking_score_weighted: float
     ranking_score_mrr: float
+    facets: Any
 
 
 def precision(TP, FP):
@@ -58,11 +59,18 @@ def needs_quoting(term: str) -> bool:
     return any(ch.isspace() for ch in term)
 
 
-def run_solr_query_post(case, solr_url, rows=30, **additional_params):
+def run_solr_query_post(case, solr_url, rows=30, facets=None, **additional_params):
     payload = {
         "rows": rows,
         "wt": "json"
     }
+
+    # Enable facets if fields are provided
+    if facets:
+        payload["facet"] = "true"
+        for f in facets:
+            payload.setdefault("facet.field", [])
+            payload["facet.field"].append(f)
 
     is_dismax = additional_params.get('defType') in ['dismax', 'edismax']
 
@@ -88,7 +96,10 @@ def run_solr_query_post(case, solr_url, rows=30, **additional_params):
 
     resp = requests.post(solr_url, data=payload)
     resp.raise_for_status()
-    return resp.json()["response"]["docs"], payload
+    data = resp.json()
+    docs = data["response"]["docs"]
+    facets = data.get("facet_counts", {})
+    return docs, facets, payload
 
 
 def compute_lang_sets(expected_langs, found_langs):
@@ -116,9 +127,9 @@ def evaluate_ranking(case, found_langs):
     return ranking_results
 
 
-def evaluate_case(case, solr_url, core, **query_params):
-    docs, query_payload = run_solr_query_post(
-        case, solr_url, 30, **query_params)
+def evaluate_case(case, solr_url, core, facets, **query_params):
+    docs, facet, query_payload = run_solr_query_post(
+        case, solr_url, 30, facets, **query_params)
     expected_langs = {x["lang"] for x in case["expected_langs"]}
     found_langs = []
     for doc in docs:
@@ -160,5 +171,6 @@ def evaluate_case(case, solr_url, core, **query_params):
         "ranking_score_sperman": compute_spearman_correlation(ranking_info),
         "ranking_score_ndcg": compute_ndcg(ranking_info),
         "ranking_score_weighted": compute_weighted_rank_deviation(ranking_info),
-        "ranking_score_mrr": compute_mrr(ranking_info)
+        "ranking_score_mrr": compute_mrr(ranking_info),
+        "facets": facet
     }

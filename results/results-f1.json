@@ -1743,6 +1743,86 @@
     "ranking_score_mrr": 0.3333333333333333
   },
   {
+    "core": "ProgLang24",
+    "name": "document:\"All programming languages\"",
+    "solr_query": {
+      "rows": 30,
+      "wt": "json",
+      "q": "document:\"All programming languages\""
+    },
+    "tp": 0,
+    "fp": 0,
+    "fn": 2,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Java",
+      "Python"
+    ],
+    "ranking": [
+      {
+        "lang": "Java",
+        "expected_rank": 1,
+        "actual_rank": null
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 2,
+        "actual_rank": null
+      }
+    ],
+    "ranking_score": 0,
+    "ranking_score_sperman": 0,
+    "ranking_score_ndcg": 0,
+    "ranking_score_weighted": 0,
+    "ranking_score_mrr": 0.0
+  },
+  {
+    "core": "ProgLang24",
+    "name": "document:\"languages that support concurrency\"",
+    "solr_query": {
+      "rows": 30,
+      "wt": "json",
+      "q": "document:\"languages that support concurrency\""
+    },
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Elixir",
+      "Scala",
+      "Go"
+    ],
+    "ranking": [
+      {
+        "lang": "Elixir",
+        "expected_rank": 1,
+        "actual_rank": null
+      },
+      {
+        "lang": "Go",
+        "expected_rank": 2,
+        "actual_rank": null
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 3,
+        "actual_rank": null
+      }
+    ],
+    "ranking_score": 0,
+    "ranking_score_sperman": 0,
+    "ranking_score_ndcg": 0,
+    "ranking_score_weighted": 0,
+    "ranking_score_mrr": 0.0
+  },
+  {
     "core": "ProgLang24_2",
     "name": "title:Python",
     "solr_query": {
@@ -3482,5 +3562,109 @@
     "ranking_score_ndcg": 0.7452525342261976,
     "ranking_score_weighted": 0.0,
     "ranking_score_mrr": 0.3333333333333333
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"All programming languages\"",
+    "solr_query": {
+      "rows": 30,
+      "wt": "json",
+      "q": "document:\"All programming languages\""
+    },
+    "tp": 2,
+    "fp": 21,
+    "fn": 0,
+    "s1_pre": 0.08695652173913043,
+    "s1_rec": 1.0,
+    "s1_f1": 0.16,
+    "found_langs": [
+      "Go",
+      "Rust",
+      "Zig",
+      "C",
+      "Swift",
+      "Haskell",
+      "C++",
+      "Kotlin",
+      "Python",
+      "MATLAB",
+      "C Sharp",
+      "Lua",
+      "Java",
+      "Ruby",
+      "Scala",
+      "Dart",
+      "Assembly language",
+      "PHP",
+      "Elixir",
+      "Apache Groovy",
+      "R",
+      "JavaScript",
+      "PowerShell"
+    ],
+    "expected_langs": [
+      "Java",
+      "Python"
+    ],
+    "ranking": [
+      {
+        "lang": "Java",
+        "expected_rank": 1,
+        "actual_rank": 13
+      },
+      {
+        "lang": "Python",
+        "expected_rank": 2,
+        "actual_rank": 9
+      }
+    ],
+    "ranking_score": 4.75,
+    "ranking_score_sperman": -0.9999999999999999,
+    "ranking_score_ndcg": 0.7967075809905066,
+    "ranking_score_weighted": 7.75,
+    "ranking_score_mrr": 0.09401709401709402
+  },
+  {
+    "core": "ProgLang24_2",
+    "name": "document:\"languages that support concurrency\"",
+    "solr_query": {
+      "rows": 30,
+      "wt": "json",
+      "q": "document:\"languages that support concurrency\""
+    },
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "s1_pre": 0,
+    "s1_rec": 0.0,
+    "s1_f1": 0,
+    "found_langs": [],
+    "expected_langs": [
+      "Elixir",
+      "Scala",
+      "Go"
+    ],
+    "ranking": [
+      {
+        "lang": "Elixir",
+        "expected_rank": 1,
+        "actual_rank": null
+      },
+      {
+        "lang": "Go",
+        "expected_rank": 2,
+        "actual_rank": null
+      },
+      {
+        "lang": "Scala",
+        "expected_rank": 3,
+        "actual_rank": null
+      }
+    ],
+    "ranking_score": 0,
+    "ranking_score_sperman": 0,
+    "ranking_score_ndcg": 0,
+    "ranking_score_weighted": 0,
+    "ranking_score_mrr": 0.0
   }
 ]
