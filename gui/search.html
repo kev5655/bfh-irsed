@@ -19,34 +19,49 @@
                 <input type="text" name="query" placeholder="Search for a programming language..."
                     list="language-suggestions" required>
                 <datalist id="language-suggestions">
-                    <option value="Elixir (programming language)">
+                    <option value="Elixir">
                     <option value="MATLAB">
-                    <option value="Rust (programming language)">
-                    <option value="Python (programming language)">
-                    <option value="R (programming language)">
-                    <option value="Zig (programming language)">
-                    <option value="Scala (programming language)">
+                    <option value="Rust">
+                    <option value="Python">
+                    <option value="R">
+                    <option value="Zig">
+                    <option value="Scala">
                     <option value="Haskell">
                     <option value="PowerShell">
-                    <option value="Java (programming language)">
+                    <option value="Java">
                     <option value="Assembly language">
-                    <option value="Swift (programming language)">
+                    <option value="Swift">
                     <option value="Lua">
-                    <option value="C Sharp (programming language)">
-                    <option value="C (programming language)">
-                    <option value="Ruby (programming language)">
+                    <option value="C Sharp">
+                    <option value="C">
+                    <option value="Ruby">
                     <option value="TypeScript">
                     <option value="Apache Groovy">
                     <option value="JavaScript">
-                    <option value="Dart (programming language)">
-                    <option value="Go (programming language)">
-                    <option value="Kotlin (programming language)">
+                    <option value="Dart">
+                    <option value="Go">
+                    <option value="Kotlin">
                     <option value="PHP">
                     <option value="C++">
                 </datalist>
 
                 <fieldset>
                     <legend>Filters</legend>
+                    <label>Paradigm:
+                        <select name="paradigm" multiple>
+                            <option value="">Any</option>
+                            <option value="functional">Functional</option>
+                            <option value="object-oriented">Object-Oriented</option>
+                            <option value="procedural">Procedural</option>
+                            <option value="imperative">Imperative</option>
+                            <option value="concurrent">Concurrent</option>
+                            <option value="distributed">Distributed</option>
+                            <option value="reflective">Reflective</option>
+                            <option value="event-driven">Event-driven</option>
+                            <option value="generic">Generic</option>
+                            <option value="structured">Structured</option>
+                        </select>
+                    </label>
                     <label>Typing Discipline:
                         <select name="typing">
                             <option value="">Any</option>
@@ -54,38 +69,21 @@
                             <option value="dynamic">Dynamic</option>
                             <option value="strong">Strong</option>
                             <option value="weak">Weak</option>
+                            <option value="inferred">Inferred</option>
                         </select>
                     </label>
-                    <label>Execution Model:
-                        <select name="execution">
-                            <option value="">Any</option>
-                            <option value="interpreted">Interpreted</option>
-                            <option value="compiled">Compiled</option>
-                            <option value="bytecode">Bytecode</option>
-                            <option value="jit">JIT</option>
-                        </select>
+                    <label>Year Range:
+                        <div class="year-range">
+                            <input type="number" name="year_min" min="1947" max="2025" placeholder="From">
+                            <span>to</span>
+                            <input type="number" name="year_max" min="1947" max="2025" placeholder="To">
+                        </div>
                     </label>
-                    <label>Programming Paradigm:
-                        <select name="paradigm">
-                            <option value="">Any</option>
-                            <option value="object-oriented">Object-Oriented</option>
-                            <option value="functional">Functional</option>
-                            <option value="procedural">Procedural</option>
-                            <option value="logic-based">Logic-based</option>
-                            <option value="multi-paradigm">Multi-paradigm</option>
-                        </select>
+                    <label>Influenced By:
+                        <input type="text" name="influenced_by" placeholder="e.g., C, Java">
                     </label>
-                    <label>Year of Creation:
-                        <input type="number" name="year" min="1950" max="2025">
-                    </label>
-                    <label>Author/Organization:
-                        <input type="text" name="author">
-                    </label>
-                    <label>Use Cases:
-                        <input type="text" name="use_cases">
-                    </label>
-                    <label>Platform/Ecosystem:
-                        <input type="text" name="platform">
+                    <label>Has Influenced:
+                        <input type="text" name="influenced" placeholder="e.g., Python, Ruby">
                     </label>
                 </fieldset>
                 <button type="submit">Search</button>

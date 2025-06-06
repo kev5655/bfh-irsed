@@ -11,29 +11,45 @@
 <body>
     <header>
         <h1>Search Results</h1>
+        <a href="search.html" class="back-button">New Search</a>
     </header>
     <main>
         <section class="results-section">
             <h2>Results</h2>
             <ul class="results-list">
                 <li>
-                    <a href="detail.html" class="result-item">
-                        <h3>Language Name</h3>
-                        <p><strong>Paradigms:</strong> Object-Oriented, Functional</p>
-                        <p><strong>Key Features:</strong> Strong typing, JIT compilation</p>
-                        <p><strong>Description:</strong> A versatile programming language used for web development and
-                            more.</p>
+                    <a href="detail.html?lang=python" class="result-item">
+                        <h3>Python</h3>
+                        <p><strong>Paradigms:</strong> Multi-paradigm: object-oriented, procedural, functional, structured, reflective</p>
+                        <p><strong>First appeared:</strong> 1991</p>
+                        <p><strong>Typing:</strong> duck, dynamic, strong</p>
                     </a>
                 </li>
                 <li>
-                    <a href="detail.html" class="result-item">
-                        <h3>Language Name</h3>
-                        <p><strong>Paradigms:</strong> Procedural, Logic-based</p>
-                        <p><strong>Key Features:</strong> Lightweight, easy to learn</p>
-                        <p><strong>Description:</strong> Ideal for educational purposes and small projects.</p>
+                    <a href="detail.html?lang=javascript" class="result-item">
+                        <h3>JavaScript</h3>
+                        <p><strong>Paradigms:</strong> Multi-paradigm: event-driven, functional, imperative, procedural, object-oriented</p>
+                        <p><strong>First appeared:</strong> 1995</p>
+                        <p><strong>Typing:</strong> Dynamic, weak, duck</p>
                     </a>
                 </li>
-                <!-- Add more results as needed -->
+                <li>
+                    <a href="detail.html?lang=rust" class="result-item">
+                        <h3>Rust</h3>
+                        <p><strong>Paradigms:</strong> Concurrent, functional, generic, imperative, structured</p>
+                        <p><strong>First appeared:</strong> 2012</p>
+                        <p><strong>Typing:</strong> Affine, inferred, nominal, static, strong</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="detail.html?lang=go" class="result-item">
+                        <h3>Go</h3>
+                        <p><strong>Paradigms:</strong> Multi-paradigm: concurrent, imperative, functional, object-oriented</p>
+                        <p><strong>First appeared:</strong> 2009</p>
+                        <p><strong>Typing:</strong> Inferred, static, strong, structural, nominal</p>
+                    </a>
+                </li>
+                <!-- Add more result items here -->
             </ul>
         </section>
     </main>
