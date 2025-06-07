@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema name="default-config" version="1.6">
+  <uniqueKey>id</uniqueKey>
+
+  <fieldType name="text_de" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.StopFilterFactory" format="snowball" words="stopwords.txt" ignoreCase="true"/>
+    </analyzer>
+  </fieldType>
+ <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
+ <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+
+  <field name="_version_" type="plong" indexed="false" stored="false"/>
+  <field name="content" type="text_de" uninvertible="false" indexed="true" stored="true"/>
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+
+</schema>
+

@@ -1,0 +1,18 @@
+zig, ziglang
+rust rustlang 
+go, golang
+c, c language
+c++, cplusplus, c plus plus
+c#, csharp, c sharp
+kotlin, jetbrains kotlin
+java, java language
+typescript, ts, typed javascript
+javascript, js, ecmascript
+dart, dartlang, google dart
+php, php language
+elixir, elixir lang
+python, py
+powershell, pwsh, microsoft powershell
+functional, declarative
+object-oriented, imperative
+modern, trendy

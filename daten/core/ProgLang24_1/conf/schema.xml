@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema name="default-config" version="1.6">
+  <uniqueKey>url</uniqueKey>
+
+  <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.StopFilterFactory" format="snowball" words="stopwords.txt" ignoreCase="true"/>
+      <filter class="solr.SnowballPorterFilterFactory"/>
+    </analyzer>
+ </fieldType>
+ <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
+ <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+
+  <dynamicField name="*" type="text_en" indexed="true" stored="true"/>
+
+  <field name="url"      type="string"  indexed="true"  stored="true" required="true"/>
+  <field name="title"    type="text_en"  indexed="true"  stored="true"/>
+  <field name="document" type="text_en"  indexed="true"  stored="true"/>
+
+  <field name="catch_all" type="text_en" stored="true" multiValued="true"/>
+  <copyField source="*" dest="catch_all"/>
+
+</schema>
+

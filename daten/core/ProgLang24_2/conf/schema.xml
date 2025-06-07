@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema name="default-config" version="1.6">
+  <uniqueKey>url</uniqueKey>
+
+  <fieldType name="title_en" class="solr.TextField" positionIncrementGap="100">
+
+    <!-- this one is for indexing -->
+    <analyzer type="index">
+      <!-- strip #, ++ -->
+      <charFilter class="solr.PatternReplaceCharFilterFactory"
+                  pattern="(?&lt;=[Cc])#"
+                  replacement=" sharp"/>
+      <charFilter class="solr.PatternReplaceCharFilterFactory"
+                  pattern="\+\+"
+                  replacement=" plus plus"/>
+
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <!-- Python3.12 -> Python 3 12 -->
+      <filter class="solr.WordDelimiterGraphFilterFactory"/>
+      <filter class="solr.FlattenGraphFilterFactory"/>
+      <filter class="solr.SnowballPorterFilterFactory"/>
+    </analyzer>
+
+    <analyzer type="query">
+      <!-- strip #, ++ -->
+      <charFilter class="solr.PatternReplaceCharFilterFactory"
+                  pattern="(?&lt;=[Cc])#"
+                  replacement=" sharp"/>
+      <charFilter class="solr.PatternReplaceCharFilterFactory"
+                  pattern="\+\+"
+                  replacement=" plus plus"/>
+
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <!-- Python3.12 -> Python 3 12 -->
+      <filter class="solr.WordDelimiterGraphFilterFactory"/>
+      <filter class="solr.SynonymGraphFilterFactory"
+              expand="true"
+              ignoreCase="true"
+              synonyms="synonyms_prog_en.txt"/>
+      <filter class="solr.SnowballPorterFilterFactory"/>
+    </analyzer>
+
+  </fieldType>
+
+  <fieldType name="text_en_prog" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.SynonymGraphFilterFactory"
+              expand="true"
+              ignoreCase="true"
+              synonyms="synonyms_prog_en.txt"/>
+      <filter class="solr.StopFilterFactory"
+              words="stopwords_prog_en.txt"
+              ignoreCase="true"/>
+      <!-- Leichter englischer Stemmer (kein Porter, um Fachbegriffe zu schonen) -->
+      <filter class="solr.EnglishMinimalStemFilterFactory"/>
+      <!-- ASCII-Folding, damit “résumé” ≙ “resume” etc. -->
+      <filter class="solr.ASCIIFoldingFilterFactory"
+              preserveOriginal="true"/>
+    </analyzer>
+  </fieldType>
+
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+
+  <dynamicField name="*" type="text_en_prog" indexed="true" stored="true"/>
+
+  <field name="url"      type="string"  indexed="true"  stored="true" required="true"/>
+  <field name="title"    type="title_en"  indexed="true"  stored="true"/>
+  <field name="document" type="text_en_prog"  indexed="true"  stored="true"/>
+
+  <field name="catch_all" type="text_en_prog" stored="true" multiValued="true"/>
+  <copyField source="*" dest="catch_all"/>
+ 
+
+</schema>
+

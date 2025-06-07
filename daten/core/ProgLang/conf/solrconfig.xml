@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<config>
+  <luceneMatchVersion>8.9.0</luceneMatchVersion>
+  <codecFactory class='solr.SchemaCodecFactory' />
+  <schemaFactory class='solr.ClassicIndexSchemaFactory' />
+  <requestHandler name='/select' class='solr.SearchHandler' default='true'>
+    <lst name="defaults">
+      <str name="echoParams">explicit</str>
+      <str name="wt">json</str>
+      <str name="indent">true</str>
+    </lst>
+  </requestHandler>
+ 
+  <requestHandler name='/update' class='solr.UpdateRequestHandler' />
+
+</config>
