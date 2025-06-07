@@ -43,19 +43,19 @@
       "C++"
     ],
     "expected_langs": [
-      "Kotlin",
       "Apache Groovy",
-      "Scala",
+      "Elixir",
       "JavaScript",
       "Ruby",
-      "Elixir",
-      "Haskell",
-      "Swift",
-      "TypeScript",
-      "Rust",
-      "Lua",
       "R",
-      "Python"
+      "Kotlin",
+      "Swift",
+      "Scala",
+      "Rust",
+      "TypeScript",
+      "Python",
+      "Haskell",
+      "Lua"
     ],
     "ranking": [
       {
@@ -129,6 +129,7 @@
     "ranking_score_ndcg": 0.9180370194772395,
     "ranking_score_weighted": 0.6102788237403621,
     "ranking_score_mrr": 0.40428571428571425,
+    "facets": {},
     "config_name": "EDisMax mit Boost Query and normal Boost",
     "config_params": {
       "defType": "edismax",
