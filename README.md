@@ -293,6 +293,47 @@ Die grafische Benutzeroberfläche (GUI) ermöglicht es, gezielt nach Programmier
 </config>
 ```
 
+## Vector Search und Embedding
+
+In diesem Abschnitt wird die Implementierung von semantischen Suchfunktionen und Embedding-Technologien im Projekt beschrieben.
+
+### Embedding-Modelle
+
+In den Notebooks `embeddings.ipynb` und `embeddings_v2.ipynb` führen wir Experimente mit Sentence-Transformer-Modellen durch, insbesondere mit den Snowflake Arctic Embed Modellen:
+
+- **Modellauswahl**: Ich verwenden verschiedene `Snowflake` Modelle
+- **Verarbeitung langer Dokumente**: Implementierung von Text-Chunking-Techniken zur effizienten Verarbeitung umfangreicher Dokumente
+- **Vektorrepräsentation**: Die Modelle generieren Embeddings von Texten, um semantische Ähnlichkeiten über reine Schlüsselwortabgleiche hinaus zu erfassen
+
+### Architektur der semantischen Suche
+
+Der semantische Suchablauf funktioniert wie folgt:
+
+1. **Text-Chunking**: Dokumente werden in überlappende Abschnitte unterteilt (mit `MAX_TOK=2048` und `STRIDE=256`)
+2. **Vektor-Embedding**: Jeder Abschnitt wird in eine Vektorraumdarstellung eingebettet
+3. **Abfrageverarbeitung**: Benutzeranfragen werden als "Query"-Prompts formatiert und mit demselben Modell eingebettet
+4. **Ähnlichkeitsberechnung**: Die Kosinus-Ähnlichkeit zwischen Abfragevektoren und Dokumentvektoren wird berechnet
+5. **Ergebnisranking**: Ergebnisse werden nach Ähnlichkeitswert sortiert und dem Benutzer präsentiert
+
+### Implementierung hybrider Suche
+
+Das Notebook `hybrid_search.ipynb` implementiert eine ausgereifte hybride Suchfunktionalität:
+
+- **Dualer Ansatz**: Kombiniert lexikalische (schlüsselwortbasierte) und semantische (vektorbasierte) Suchmethoden
+- **Integrationsstrategie**: Nutzt Solr's Boolean Query Parser, um beide Suchmethodologien effektiv zu verbinden
+- **Verbesserte Präzision**: Liefert genauere Ergebnisse durch die Nutzung der Stärken beider Ansätze
+
+### Leistungsbewertung
+
+Die F1-Evaluierung in `f1-calc.ipynb` wurde erweitert, um die Leistung der hybriden Suche zu messen:
+
+- **Vergleichsanalyse**: Benchmarkt traditionelle Suchmethoden gegen hybride Suchansätze
+- **Metrikberechnung**: Berechnet Precision, Recall und F1-Scores für verschiedene Abfragetypen
+- **Visuelle Darstellung**: Präsentiert Verbesserungen durch vergleichende Metrikvisualisierungen
+
+
+Die Ergebnisse zeigen, dass die semantische/hybride Suche bei komplexen natürlichsprachlichen Abfragen zwar mehr Treffer liefert als die rein lexikalische Suche – insbesondere in Fällen, in denen die Standardsuche keine oder nur wenige Ergebnisse zurückgibt. Allerdings fällt auf, dass die hybride Suche aktuell oft sehr viele (teils fast alle) Dokumente als Treffer zurückliefert. Hier besteht noch Optimierungspotenzial, um die Treffermenge gezielter und präziser einzugrenzen.
+
 ## Projektstruktur und Ordnerübersicht
 
 Im Folgenden wird beschrieben, welche Dateien und Notebooks sich in welchem Ordner befinden und wofür sie verwendet werden.
@@ -345,3 +386,6 @@ Im Folgenden wird beschrieben, welche Dateien und Notebooks sich in welchem Ordn
 **Hinweis:**  
 Alle relevanten Notebooks und Skripte befinden sich im Ordner `/home/bfh/irsed/notebooks/`. Die gesammelten und verarbeiteten Daten liegen im Unterordner `/home/bfh/irsed/daten/`. Die GUI-Komponenten sind im Unterordner `/home/bfh/irsed/notebooks/gui/` zu finden.
 
+## Ai Disclaimer
+
+Die meinst Scripts wurden von llm generiert und übernommen und manuell verbessert.
